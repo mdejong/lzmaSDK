@@ -202,47 +202,6 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>CD33A61511EBD36D00A4B114</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>lzmaSDKAppDelegate.m</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>CD33A61611EBD36D00A4B114</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>lzmaSDKAppDelegate.m</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>CDCBA73011EBD817005ABEBC</string>
-						<key>history</key>
-						<array>
-							<string>CD33A61711EBD36D00A4B114</string>
-							<string>CDADA1C911EBD78F00F5EC49</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {1212, 676}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>12 56 1212 717 0 0 1280 778 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
 				<string>CD33A61A11EBD36D00A4B114</string>
 				<key>PBXProjectModuleLabel</key>
 				<string>LZMAExtractor.m</string>
@@ -257,11 +216,11 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>CDCBA73111EBD817005ABEBC</string>
+						<string>CD2DF01E11EBDDC800991447</string>
 						<key>history</key>
 						<array>
 							<string>CD33A61C11EBD36D00A4B114</string>
-							<string>CDADA1CA11EBD78F00F5EC49</string>
+							<string>CDCBA73111EBD817005ABEBC</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -298,11 +257,11 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>CDCBA73211EBD817005ABEBC</string>
+						<string>CD2DF01F11EBDDC800991447</string>
 						<key>history</key>
 						<array>
 							<string>CD33A62111EBD36D00A4B114</string>
-							<string>CDADA1CB11EBD78F00F5EC49</string>
+							<string>CDCBA73211EBD817005ABEBC</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -399,16 +358,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>9</integer>
-									<integer>6</integer>
-									<integer>5</integer>
+									<integer>11</integer>
 									<integer>2</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 37}, {260, 646}}</string>
+							<string>{{0, 65}, {260, 646}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -445,7 +402,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>lzmaSDKAppDelegate.m</string>
+								<string>7zMain.c</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -453,11 +410,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>lzmaSDKAppDelegate.m</string>
+										<string>7zMain.c</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>CDCBA72D11EBD817005ABEBC</string>
+										<string>CD2DF01D11EBDDC800991447</string>
 										<key>history</key>
 										<array>
 											<string>CD9C90E510C4953400FAD63F</string>
@@ -474,14 +431,14 @@
 											<string>CD875A9E11EBBAA0004A1640</string>
 											<string>CD875A9F11EBBAA0004A1640</string>
 											<string>CD875AC111EBBD57004A1640</string>
-											<string>CD875B2311EBC09F004A1640</string>
 											<string>CD875B2411EBC09F004A1640</string>
 											<string>CD875B2511EBC09F004A1640</string>
 											<string>CD875B2611EBC09F004A1640</string>
 											<string>CD33A61211EBD36D00A4B114</string>
-											<string>CD33A62F11EBD3BA00A4B114</string>
 											<string>CD33A63011EBD3BA00A4B114</string>
-											<string>CDADA1C811EBD78F00F5EC49</string>
+											<string>CD2DEFDE11EBDB5D00991447</string>
+											<string>CD2DF00A11EBDCDA00991447</string>
+											<string>CD2DF00B11EBDCDA00991447</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -493,14 +450,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {909, 462}}</string>
+								<string>{{0, 0}, {909, 456}}</string>
 								<key>RubberWindowFrame</key>
 								<string>26 71 1191 705 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>462pt</string>
+							<string>456pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -513,14 +470,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 467}, {909, 197}}</string>
+								<string>{{0, 461}, {909, 203}}</string>
 								<key>RubberWindowFrame</key>
 								<string>26 71 1191 705 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>197pt</string>
+							<string>203pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -539,9 +496,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>CDCBA72E11EBD817005ABEBC</string>
+				<string>CD2DEFA611EBDAD300991447</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>CDCBA72F11EBD817005ABEBC</string>
+				<string>CD2DEFA711EBDAD300991447</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -677,14 +634,15 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>CDCBA73311EBD817005ABEBC</string>
-		<string>CDCBA73411EBD817005ABEBC</string>
-		<string>1C78EAAD065D492600B07095</string>
+		<string>CD2DF01C11EBDDC600991447</string>
+		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>CD2DEFC111EBDAFA00991447</string>
+		<string>CD2DEFB711EBDAD300991447</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>CD9C90C610C4927600FAD63F</string>
 		<string>CD33A61F11EBD36D00A4B114</string>
 		<string>CD33A61A11EBD36D00A4B114</string>
-		<string>CD33A61511EBD36D00A4B114</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/mo/Development/lzmaSDK/lzmaSDK.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -765,7 +723,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>CD9C90C610C4927600FAD63F</string>
-				<string>CDCBA72511EBD812005ABEBC</string>
+				<string>CD2DEFAE11EBDAD300991447</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -885,13 +843,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>CDCBA72611EBD812005ABEBC</string>
+				<string>CD2DEFAF11EBDAD300991447</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>CDCBA72711EBD812005ABEBC</string>
-				<string>CDCBA72811EBD812005ABEBC</string>
-				<string>CDCBA72911EBD812005ABEBC</string>
-				<string>CDCBA72A11EBD812005ABEBC</string>
-				<string>CDCBA72B11EBD812005ABEBC</string>
+				<string>CD2DEFB011EBDAD300991447</string>
+				<string>CD2DEFB111EBDAD300991447</string>
+				<string>CD2DEFB211EBDAD300991447</string>
+				<string>CD2DEFB311EBDAD300991447</string>
+				<string>CD2DEFB411EBDAD300991447</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -925,7 +883,7 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>7zIn.c</string>
+										<string>CpuArch.c</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -981,8 +939,8 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D57069F1CE1000CFCEE</string>
-				<string>CD33A52411EBCA9400A4B114</string>
-				<string>CD33A52511EBCA9400A4B114</string>
+				<string>CD2DEFDB11EBDB5000991447</string>
+				<string>CD2DEFDC11EBDB5000991447</string>
 				<string>1CDD528C0622207200134675</string>
 				<string>1CD0528E0623707200166675</string>
 			</array>
@@ -1047,7 +1005,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>CDCBA72C11EBD812005ABEBC</string>
+				<string>CD2DEFB511EBDAD300991447</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -1057,7 +1015,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

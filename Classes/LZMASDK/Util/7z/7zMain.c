@@ -561,6 +561,8 @@ int do7z_extract_entry(char *archivePath, char *entryName, char *entryPath)
   
 #ifdef _7ZIP_CRC_SUPPORT
   CrcGenerateTable();
+#else
+  //CPU_Is_InOrder(); // Not needed currently
 #endif
   
   SzArEx_Init(&db);

@@ -71,17 +71,14 @@ static void MyCPUID(UInt32 function, UInt32 *a, UInt32 *b, UInt32 *c, UInt32 *d)
   *d = d2;
 
   #else
-
-  /*
- 	__asm__ __volatile__ (
- 		"cpuid"
- 		: "=a" (*a) ,
- 		  "=b" (*b) ,
- 		  "=c" (*c) ,
- 		  "=d" (*d)
-		: "0" (function)) ;
   
-   */
+  __asm__ __volatile__("pushl %%ebx      \n\t" /* save %ebx */
+               "cpuid            \n\t"
+               "movl %%ebx, %1   \n\t" /* save what cpuid just put in %ebx */
+               "popl %%ebx       \n\t" /* restore the old %ebx */
+               : "=a"(*a), "=r"(*b), "=c"(*c), "=d"(*d)
+               : "a"(function)
+               : "cc");
   
   #endif
   
@@ -99,13 +96,10 @@ static void MyCPUID(UInt32 function, UInt32 *a, UInt32 *b, UInt32 *c, UInt32 *d)
 
 Bool x86cpuid_CheckAndRead(Cx86cpuid *p)
 {
-  return False;
-/*
   CHECK_CPUID_IS_SUPPORTED
   MyCPUID(0, &p->maxFunc, &p->vendor[0], &p->vendor[2], &p->vendor[1]);
   MyCPUID(1, &p->ver, &p->b, &p->c, &p->d);
   return True;
-*/
 }
 
 static UInt32 kVendors[][3] =
