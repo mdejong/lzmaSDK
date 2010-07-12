@@ -284,7 +284,7 @@ static void GetAttribString(UInt32 wa, Bool isDir, char *s)
 }
 #endif
 
-int MY_CDECL main2(int numargs, char *args[])
+int MY_CDECL unused_main(int numargs, char *args[])
 {
   CFileInStream archiveStream;
   CLookToRead lookStream;
