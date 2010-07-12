@@ -35,7 +35,7 @@ extern int do7z_extract_files(char *archive_name);
         NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:myTmpDir error:nil];
         NSAssert(contents, @"contentsOfDirectoryAtPath failed");
         for (NSString *path in contents) {
-            NSLog([NSString stringWithFormat:@"found existing dir path: %@", path]);
+            NSLog(@"found existing dir path: %@", path);
             NSString *myTmpDirPath = [myTmpDir stringByAppendingPathComponent:path];
             worked = [[NSFileManager defaultManager] removeItemAtPath:myTmpDirPath error:nil];
             NSAssert(worked, @"could not remove existing file");
@@ -47,7 +47,7 @@ extern int do7z_extract_files(char *archive_name);
     
     worked = [[NSFileManager defaultManager] changeCurrentDirectoryPath:myTmpDir];
     NSAssert(worked, @"cd to tmp 7z dir failed");
-    NSLog([NSString stringWithFormat:@"cd to %@", myTmpDir]);
+    NSLog(@"cd to %@", myTmpDir);
     
     char *path = (char*) [archivePath UTF8String];
     int result = do7z_extract_files(path);
@@ -60,7 +60,7 @@ extern int do7z_extract_files(char *archive_name);
     NSArray *contents = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:myTmpDir error:nil];
     NSAssert(contents, @"contentsOfDirectoryAtPath failed");
     for (NSString *path in contents) {
-        NSLog([NSString stringWithFormat:@"found existing dir path: %@", path]);
+        NSLog(@"found existing dir path: %@", path);
         NSString *myTmpDirPath = [myTmpDir stringByAppendingPathComponent:path];
         [fullPathContents addObject:myTmpDirPath];
     }
@@ -86,8 +86,8 @@ extern int do7z_extract_files(char *archive_name);
         NSString *outStr = [[NSString alloc] initWithData:outputData encoding:NSUTF8StringEncoding];
         [outStr autorelease];
         
-        NSLog(entryPath);
-        NSLog(outStr);
+        NSLog(@"%@", entryPath);
+        NSLog(@"%@", outStr);
     }
     
     return;
