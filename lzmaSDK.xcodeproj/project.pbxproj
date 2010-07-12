@@ -13,6 +13,8 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		CD33A58011EBCF6300A4B114 /* test.7z in Resources */ = {isa = PBXBuildFile; fileRef = CD33A57F11EBCF6300A4B114 /* test.7z */; };
+		CD33A5EA11EBD12800A4B114 /* LZMAExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = CD33A5E911EBD12800A4B114 /* LZMAExtractor.m */; };
 		CD875A0D11EBB67C004A1640 /* 7zBuf.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759ED11EBB67C004A1640 /* 7zBuf.c */; };
 		CD875A0E11EBB67C004A1640 /* 7zBuf2.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759EF11EBB67C004A1640 /* 7zBuf2.c */; };
 		CD875A1111EBB67C004A1640 /* 7zDec.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759F311EBB67C004A1640 /* 7zDec.c */; };
@@ -44,6 +46,9 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* lzmaSDK_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzmaSDK_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* lzmaSDK-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "lzmaSDK-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		CD33A57F11EBCF6300A4B114 /* test.7z */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.7z; sourceTree = "<group>"; };
+		CD33A5E811EBD12800A4B114 /* LZMAExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZMAExtractor.h; sourceTree = "<group>"; };
+		CD33A5E911EBD12800A4B114 /* LZMAExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZMAExtractor.m; sourceTree = "<group>"; };
 		CD8759EC11EBB67C004A1640 /* 7z.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 7z.h; sourceTree = "<group>"; };
 		CD8759ED11EBB67C004A1640 /* 7zBuf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 7zBuf.c; sourceTree = "<group>"; };
 		CD8759EE11EBB67C004A1640 /* 7zBuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 7zBuf.h; sourceTree = "<group>"; };
@@ -136,6 +141,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CD33A57F11EBCF6300A4B114 /* test.7z */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* lzmaSDK-Info.plist */,
 			);
@@ -173,6 +179,8 @@
 		CD9C907910C4925900FAD63F /* LZMASDK */ = {
 			isa = PBXGroup;
 			children = (
+				CD33A5E811EBD12800A4B114 /* LZMAExtractor.h */,
+				CD33A5E911EBD12800A4B114 /* LZMAExtractor.m */,
 				CD875B0E11EBC037004A1640 /* Util */,
 				CD875AA311EBBAC7004A1640 /* CpuArch.h */,
 				CD875AA211EBBAC7004A1640 /* CpuArch.c */,
@@ -252,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				CD33A58011EBCF6300A4B114 /* test.7z in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +291,7 @@
 				CD875AA411EBBAC7004A1640 /* CpuArch.c in Sources */,
 				CD875B1311EBC037004A1640 /* 7zAlloc.c in Sources */,
 				CD875B1411EBC037004A1640 /* 7zMain.c in Sources */,
+				CD33A5EA11EBD12800A4B114 /* LZMAExtractor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

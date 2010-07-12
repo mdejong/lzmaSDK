@@ -1386,10 +1386,8 @@ SRes SzArEx_Extract(
           {
 #ifdef _7ZIP_CRC_SUPPORT
             if (CrcCalc(*outBuffer, unpackSize) != folder->UnpackCRC)
-#else
-            if (1)
-#endif
               res = SZ_ERROR_CRC;
+#endif
           }
         }
       }
@@ -1407,10 +1405,8 @@ SRes SzArEx_Extract(
       return SZ_ERROR_FAIL;
 #ifdef _7ZIP_CRC_SUPPORT
     if (fileItem->CrcDefined && CrcCalc(*outBuffer + *offset, *outSizeProcessed) != fileItem->Crc)
-#else
-    if (1)
-#endif
       res = SZ_ERROR_CRC;
+#endif
   }
   return res;
 }
