@@ -10,8 +10,8 @@
 	1D3623250D0F684500981E51 /* lzmaSDKAppDelegate.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1153, 1040}}";
-			sepNavSelRange = "{1708, 0}";
-			sepNavVisRange = "{497, 1335}";
+			sepNavSelRange = "{1715, 0}";
+			sepNavVisRange = "{497, 1342}";
 			sepNavWindowFrame = "{{13, 0}, {1212, 773}}";
 		};
 	};
@@ -24,6 +24,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = CD9C906410C4892600FAD63F /* lzmaSDK */;
+		activeSDKPreference = iphonesimulator3.1.3;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* lzmaSDK */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* lzmaSDK */,
@@ -79,8 +80,8 @@
 					PBXFileDataSource_Warnings_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 300663424;
-			PBXWorkspaceStateSaveDate = 300663424;
+			PBXPerProjectTemplateStateSaveDate = 300668615;
+			PBXWorkspaceStateSaveDate = 300668615;
 		};
 		perUserProjectItems = {
 			CD32408F10C4B23E003C2E4E /* PBXTextBookmark */ = CD32408F10C4B23E003C2E4E /* PBXTextBookmark */;
@@ -90,14 +91,10 @@
 			CD33A54C11EBCE5800A4B114 /* PBXTextBookmark */ = CD33A54C11EBCE5800A4B114 /* PBXTextBookmark */;
 			CD33A61211EBD36D00A4B114 /* PBXTextBookmark */ = CD33A61211EBD36D00A4B114 /* PBXTextBookmark */;
 			CD33A61711EBD36D00A4B114 /* PBXTextBookmark */ = CD33A61711EBD36D00A4B114 /* PBXTextBookmark */;
-			CD33A61811EBD36D00A4B114 /* PBXTextBookmark */ = CD33A61811EBD36D00A4B114 /* PBXTextBookmark */;
 			CD33A61C11EBD36D00A4B114 /* PBXTextBookmark */ = CD33A61C11EBD36D00A4B114 /* PBXTextBookmark */;
-			CD33A61D11EBD36D00A4B114 /* PBXTextBookmark */ = CD33A61D11EBD36D00A4B114 /* PBXTextBookmark */;
 			CD33A62111EBD36D00A4B114 /* PBXTextBookmark */ = CD33A62111EBD36D00A4B114 /* PBXTextBookmark */;
-			CD33A62211EBD36D00A4B114 /* PBXTextBookmark */ = CD33A62211EBD36D00A4B114 /* PBXTextBookmark */;
 			CD33A62F11EBD3BA00A4B114 /* PBXTextBookmark */ = CD33A62F11EBD3BA00A4B114 /* PBXTextBookmark */;
 			CD33A63011EBD3BA00A4B114 /* PBXTextBookmark */ = CD33A63011EBD3BA00A4B114 /* PBXTextBookmark */;
-			CD33A63111EBD3BA00A4B114 /* PBXTextBookmark */ = CD33A63111EBD3BA00A4B114 /* PBXTextBookmark */;
 			CD33A63611EBD3BD00A4B114 /* PBXTextBookmark */ = CD33A63611EBD3BD00A4B114 /* PBXTextBookmark */;
 			CD33A63711EBD3BD00A4B114 /* PBXTextBookmark */ = CD33A63711EBD3BD00A4B114 /* PBXTextBookmark */;
 			CD33A63811EBD3BD00A4B114 /* PBXTextBookmark */ = CD33A63811EBD3BD00A4B114 /* PBXTextBookmark */;
@@ -116,6 +113,10 @@
 			CD875B2511EBC09F004A1640 /* PBXTextBookmark */ = CD875B2511EBC09F004A1640 /* PBXTextBookmark */;
 			CD875B2611EBC09F004A1640 /* PBXTextBookmark */ = CD875B2611EBC09F004A1640 /* PBXTextBookmark */;
 			CD9C90E510C4953400FAD63F /* PBXTextBookmark */ = CD9C90E510C4953400FAD63F /* PBXTextBookmark */;
+			CDADA1C811EBD78F00F5EC49 /* PBXTextBookmark */ = CDADA1C811EBD78F00F5EC49 /* PBXTextBookmark */;
+			CDADA1C911EBD78F00F5EC49 /* PBXTextBookmark */ = CDADA1C911EBD78F00F5EC49 /* PBXTextBookmark */;
+			CDADA1CA11EBD78F00F5EC49 /* PBXTextBookmark */ = CDADA1CA11EBD78F00F5EC49 /* PBXTextBookmark */;
+			CDADA1CB11EBD78F00F5EC49 /* PBXTextBookmark */ = CDADA1CB11EBD78F00F5EC49 /* PBXTextBookmark */;
 		};
 		sourceControlManager = CD9C907610C4893300FAD63F /* Source Control */;
 		userBuildSettings = {
@@ -187,7 +188,7 @@
 	};
 	CD33A5E911EBD12800A4B114 /* LZMAExtractor.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1153, 1488}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1153, 1520}}";
 			sepNavSelRange = "{141, 25}";
 			sepNavVisRange = "{0, 1585}";
 			sepNavWindowFrame = "{{12, 0}, {1212, 773}}";
@@ -213,16 +214,6 @@
 		vrLen = 328;
 		vrLoc = 0;
 	};
-	CD33A61811EBD36D00A4B114 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* lzmaSDKAppDelegate.m */;
-		name = "lzmaSDKAppDelegate.m: 52";
-		rLen = 0;
-		rLoc = 1708;
-		rType = 0;
-		vrLen = 1333;
-		vrLoc = 494;
-	};
 	CD33A61C11EBD36D00A4B114 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = CD33A5E811EBD12800A4B114 /* LZMAExtractor.h */;
@@ -233,16 +224,6 @@
 		vrLen = 718;
 		vrLoc = 0;
 	};
-	CD33A61D11EBD36D00A4B114 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CD33A5E911EBD12800A4B114 /* LZMAExtractor.m */;
-		name = "LZMAExtractor.m: 77";
-		rLen = 0;
-		rLoc = 2958;
-		rType = 0;
-		vrLen = 1521;
-		vrLoc = 2035;
-	};
 	CD33A62111EBD36D00A4B114 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = CD33A5E811EBD12800A4B114 /* LZMAExtractor.h */;
@@ -251,16 +232,6 @@
 		rLoc = 227;
 		rType = 0;
 		vrLen = 718;
-		vrLoc = 0;
-	};
-	CD33A62211EBD36D00A4B114 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = CD33A5E911EBD12800A4B114 /* LZMAExtractor.m */;
-		name = "LZMAExtractor.m: 16";
-		rLen = 0;
-		rLoc = 406;
-		rType = 0;
-		vrLen = 1581;
 		vrLoc = 0;
 	};
 	CD33A62F11EBD3BA00A4B114 /* PBXTextBookmark */ = {
@@ -283,19 +254,12 @@
 		vrLen = 762;
 		vrLoc = 2750;
 	};
-	CD33A63111EBD3BA00A4B114 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 1D3623250D0F684500981E51 /* lzmaSDKAppDelegate.m */;
-		rLen = 0;
-		rLoc = 46;
-		rType = 1;
-	};
 	CD33A63611EBD3BD00A4B114 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 1D3623250D0F684500981E51 /* lzmaSDKAppDelegate.m */;
 		name = "lzmaSDKAppDelegate.m: 41";
 		rLen = 0;
-		rLoc = 1199;
+		rLoc = 1206;
 		rType = 0;
 		vrLen = 897;
 		vrLoc = 927;
@@ -305,7 +269,7 @@
 		fRef = 1D3623250D0F684500981E51 /* lzmaSDKAppDelegate.m */;
 		name = "lzmaSDKAppDelegate.m: 52";
 		rLen = 0;
-		rLoc = 1708;
+		rLoc = 1715;
 		rType = 0;
 		vrLen = 1335;
 		vrLoc = 497;
@@ -580,11 +544,6 @@
 		name = 7zMain.c;
 		path = /Users/mo/Development/lzmaSDK/Classes/LZMASDK/OLD_Archive/7z/7zMain.c;
 		sourceTree = "<absolute>";
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {848, 3632}}";
-			sepNavSelRange = "{1860, 3691}";
-			sepNavVisRange = "{5008, 544}";
-		};
 	};
 	CD9C906410C4892600FAD63F /* lzmaSDK */ = {
 		isa = PBXExecutable;
@@ -672,6 +631,46 @@
 		rLoc = 0;
 		rType = 0;
 		vrLen = 362;
+		vrLoc = 0;
+	};
+	CDADA1C811EBD78F00F5EC49 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* lzmaSDKAppDelegate.m */;
+		name = "lzmaSDKAppDelegate.m: 41";
+		rLen = 0;
+		rLoc = 1206;
+		rType = 0;
+		vrLen = 807;
+		vrLoc = 1024;
+	};
+	CDADA1C911EBD78F00F5EC49 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* lzmaSDKAppDelegate.m */;
+		name = "lzmaSDKAppDelegate.m: 52";
+		rLen = 0;
+		rLoc = 1715;
+		rType = 0;
+		vrLen = 1342;
+		vrLoc = 497;
+	};
+	CDADA1CA11EBD78F00F5EC49 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CD33A5E911EBD12800A4B114 /* LZMAExtractor.m */;
+		name = "LZMAExtractor.m: 77";
+		rLen = 153;
+		rLoc = 2951;
+		rType = 0;
+		vrLen = 1536;
+		vrLoc = 1976;
+	};
+	CDADA1CB11EBD78F00F5EC49 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CD33A5E911EBD12800A4B114 /* LZMAExtractor.m */;
+		name = "LZMAExtractor.m: 9";
+		rLen = 25;
+		rLoc = 141;
+		rType = 0;
+		vrLen = 1585;
 		vrLoc = 0;
 	};
 }

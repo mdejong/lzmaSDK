@@ -37,7 +37,7 @@
     NSLog(@"%@", outStr);
   }
   
-  // Extract entry "make.out" and save it as "tmp/make.out.txt" in the tmp dir.
+  // Extract single entry "make.out" and save it as "tmp/make.out.txt" in the tmp dir.
   
 	NSString *makeTmpFilename = @"make.out.txt";
 	NSString *makeTmpPath = [NSTemporaryDirectory() stringByAppendingPathComponent:makeTmpFilename];
