@@ -29,7 +29,6 @@
 		CD875A2A11EBB689004A1640 /* Ppmd7Dec.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A2211EBB689004A1640 /* Ppmd7Dec.c */; };
 		CD875A2B11EBB689004A1640 /* Ppmd8.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A2311EBB689004A1640 /* Ppmd8.c */; };
 		CD875A2C11EBB689004A1640 /* Ppmd8Dec.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A2511EBB689004A1640 /* Ppmd8Dec.c */; };
-		CD875A2D11EBB689004A1640 /* Ppmd8Enc.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A2611EBB689004A1640 /* Ppmd8Enc.c */; };
 		CD875AA411EBBAC7004A1640 /* CpuArch.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875AA211EBBAC7004A1640 /* CpuArch.c */; };
 		CD875B1311EBC037004A1640 /* 7zAlloc.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875B1011EBC037004A1640 /* 7zAlloc.c */; };
 		CD875B1411EBC037004A1640 /* 7zMain.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875B1211EBC037004A1640 /* 7zMain.c */; };
@@ -75,7 +74,6 @@
 		CD875A2311EBB689004A1640 /* Ppmd8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Ppmd8.c; sourceTree = "<group>"; };
 		CD875A2411EBB689004A1640 /* Ppmd8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ppmd8.h; sourceTree = "<group>"; };
 		CD875A2511EBB689004A1640 /* Ppmd8Dec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Ppmd8Dec.c; sourceTree = "<group>"; };
-		CD875A2611EBB689004A1640 /* Ppmd8Enc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Ppmd8Enc.c; sourceTree = "<group>"; };
 		CD875A2711EBB689004A1640 /* RotateDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotateDefs.h; sourceTree = "<group>"; };
 		CD875A2811EBB689004A1640 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
 		CD875AA211EBBAC7004A1640 /* CpuArch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CpuArch.c; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 				CD875A2311EBB689004A1640 /* Ppmd8.c */,
 				CD875A2411EBB689004A1640 /* Ppmd8.h */,
 				CD875A2511EBB689004A1640 /* Ppmd8Dec.c */,
-				CD875A2611EBB689004A1640 /* Ppmd8Enc.c */,
 				CD875A2711EBB689004A1640 /* RotateDefs.h */,
 				CD875A2811EBB689004A1640 /* Types.h */,
 				CD8759EC11EBB67C004A1640 /* 7z.h */,
@@ -294,7 +291,6 @@
 				CD875A2A11EBB689004A1640 /* Ppmd7Dec.c in Sources */,
 				CD875A2B11EBB689004A1640 /* Ppmd8.c in Sources */,
 				CD875A2C11EBB689004A1640 /* Ppmd8Dec.c in Sources */,
-				CD875A2D11EBB689004A1640 /* Ppmd8Enc.c in Sources */,
 				CD875AA411EBBAC7004A1640 /* CpuArch.c in Sources */,
 				CD875B1311EBC037004A1640 /* 7zAlloc.c in Sources */,
 				CD875B1411EBC037004A1640 /* 7zMain.c in Sources */,
