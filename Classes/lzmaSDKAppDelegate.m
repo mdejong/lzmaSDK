@@ -52,6 +52,8 @@
     NSLog(@"%@", makeTmpFilename);
     NSLog(@"%@", outStr);    
   }
+
+  NSLog(@"DONE");
   
   return;  
 }

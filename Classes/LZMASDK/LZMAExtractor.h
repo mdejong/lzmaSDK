@@ -1,6 +1,6 @@
 //
-//  EventListLoader.h
-//  flipbooks
+//  LZMAExtractor.h
+//  lzmaSDK
 //
 //  Created by Brian Chaikelson on 11/19/09.
 //  Copyright 2009 __MyCompanyName__. All rights reserved.
