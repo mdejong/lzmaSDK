@@ -1,7 +1,7 @@
 This directory contains the LZMA SDK customized for an embedded system (iPhone/iOS)
 Only the file extraction logic was included, all code related to creating
 compressed streams was removed. Also, CRC validation was removed to
-improve performance.
+improve performance. This is based on lzma release 9.21 beta.
 
 Embedded version does not need exe branch predictors.
 
