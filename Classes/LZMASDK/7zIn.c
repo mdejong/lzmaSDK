@@ -1225,7 +1225,9 @@ static SRes SzArEx_Open2(
   Int64 startArcPos;
   UInt64 nextHeaderOffset, nextHeaderSize;
   size_t nextHeaderSizeT;
+#ifdef _7ZIP_CRC_SUPPORT
   UInt32 nextHeaderCRC;
+#endif
   CBuf buffer;
   SRes res;
 
@@ -1241,7 +1243,9 @@ static SRes SzArEx_Open2(
 
   nextHeaderOffset = GetUi64(header + 12);
   nextHeaderSize = GetUi64(header + 20);
+#ifdef _7ZIP_CRC_SUPPORT
   nextHeaderCRC = GetUi32(header + 28);
+#endif
 
   p->startPosAfterHeader = startArcPos + k7zStartHeaderSize;
   
@@ -1276,11 +1280,11 @@ static SRes SzArEx_Open2(
   res = LookInStream_Read(inStream, buffer.data, nextHeaderSizeT);
   if (res == SZ_OK)
   {
-    res = SZ_ERROR_ARCHIVE;
 #ifdef _7ZIP_CRC_SUPPORT
+    res = SZ_ERROR_ARCHIVE;
     if (CrcCalc(buffer.data, nextHeaderSizeT) == nextHeaderCRC)
 #else
-      if (1)
+    if (1)
 #endif
     {
       CSzData sd;

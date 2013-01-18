@@ -259,6 +259,7 @@ static void ConvertFileTimeToString(const CNtfsFileTime *ft, char *s)
   s = UIntToStr(s, hour, 2); *s++ = ':';
   s = UIntToStr(s, min, 2);  *s++ = ':';
   s = UIntToStr(s, sec, 2);
+  s = s; // Avoids clang analyzer error about s value not being read
 }
 
 void PrintError(char *sz)
@@ -340,11 +341,11 @@ int MY_CDECL unused_main(int numargs, char *args[])
   if (res == SZ_OK)
   {
     char *command = args[1];
-    int listCommand = 0, testCommand = 0, extractCommand = 0, fullPaths = 0;
+    int listCommand = 0, testCommand = 0, /*extractCommand = 0,*/ fullPaths = 0;
     if (strcmp(command, "l") == 0) listCommand = 1;
     else if (strcmp(command, "t") == 0) testCommand = 1;
-    else if (strcmp(command, "e") == 0) extractCommand = 1;
-    else if (strcmp(command, "x") == 0) { extractCommand = 1; fullPaths = 1; }
+    else if (strcmp(command, "e") == 0) { /*extractCommand = 1;*/ }
+    else if (strcmp(command, "x") == 0) { /*extractCommand = 1;*/ fullPaths = 1; }
     else
     {
       PrintError("incorrect command");
@@ -432,7 +433,7 @@ int MY_CDECL unused_main(int numargs, char *args[])
           size_t j;
           UInt16 *name = (UInt16 *)temp;
           const UInt16 *destPath = (const UInt16 *)name;
-          for (j = 0; name[j] != 0; j++)
+          for (j = 0; (name != NULL) && (name[j] != 0); j++)
             if (name[j] == '/')
             {
               if (fullPaths)
@@ -674,7 +675,7 @@ int do7z_extract_entry(char *archivePath, char *entryName, char *entryPath)
           if (!extractAllFiles) {
             CBuf buf;
             Buf_Init(&buf);
-            if (Utf16_To_Char(&buf, temp, 0) == 0)
+            if (temp && (Utf16_To_Char(&buf, temp, 0) == 0))
             {
               if (strcmp((char*)buf.data, entryName) != 0) {
                 // This is not the entry we are interested in extracting
