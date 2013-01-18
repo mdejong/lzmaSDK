@@ -508,7 +508,7 @@ int MY_CDECL unused_main(int numargs, char *args[])
 // a single file is extracted by passing a non-NULL entryName,
 // then the file data is written to the path indicated by entryPath.
 
-#define DEBUG_OUTPUT
+//#define DEBUG_OUTPUT
 
 int do7z_extract_entry(char *archivePath, char *entryName, char *entryPath)
 {
@@ -520,6 +520,8 @@ int do7z_extract_entry(char *archivePath, char *entryName, char *entryPath)
   ISzAlloc allocTempImp;
   UInt16 *temp = NULL;
   size_t tempSize = 0;
+  int foundMatchingEntryName = 0;
+  int extractAllFiles = 0;
 
 /*
   printf("\n7z ANSI-C Decoder " MY_VERSION_COPYRIGHT_DATE "\n\n");
@@ -584,7 +586,6 @@ int do7z_extract_entry(char *archivePath, char *entryName, char *entryPath)
     }
 */
     
-    int extractAllFiles = 0;
     if (entryName == NULL) {
       extractAllFiles = 1;
     } else {
@@ -684,6 +685,14 @@ int do7z_extract_entry(char *archivePath, char *entryName, char *entryPath)
             Buf_Free(&buf, &g_Alloc);
           }
           
+          if (0) {
+            printf("Extracting ");
+            PrintString(temp);
+            printf("\n");
+          }          
+          
+          foundMatchingEntryName = 1;
+          
           res = SzArEx_Extract(&db, &lookStream.s, i,
                                &blockIndex, &outBuffer, &outBufferSize,
                                &offset, &outSizeProcessed,
@@ -775,6 +784,14 @@ int do7z_extract_entry(char *archivePath, char *entryName, char *entryPath)
   SzFree(NULL, temp);
   
   File_Close(&archiveStream.file);
+  if (!extractAllFiles && (foundMatchingEntryName == 0)) {
+    // Did not find a matching entry in the archive
+#ifdef DEBUG_OUTPUT
+    printf("\nCould not find matching entry in archive\n");
+#endif
+    return 1;    
+  }
+  
   if (res == SZ_OK)
   {
 #ifdef DEBUG_OUTPUT
