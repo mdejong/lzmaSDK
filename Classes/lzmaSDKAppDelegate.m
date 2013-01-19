@@ -86,6 +86,49 @@ uint32_t filesize(char *filepath) {
   }
 }
 
+// This test will extract a 500 meg file from testMed.7z, this 500 meg file is way too large
+// to fit into regular memory, but it is smaller than the 700 meg limit on mapped memory
+// in iOS. This method should work as long as the cached decoded data is written to a
+// mapped file.
+
+- (void) testMed
+{
+  // Extract files from archive into named dir in the temp dir
+  
+  NSString *make7zFilename = @"testMed.7z";
+  NSString *make7zResPath = [[NSBundle mainBundle] pathForResource:make7zFilename ofType:nil];
+  NSAssert(make7zResPath, @"can't find %@", make7zFilename);
+  
+  // Extract single entry "med.data" into the tmp dir
+  
+  NSString *makeTmpFilename = @"med.data";
+  NSString *makeTmpPath = [NSTemporaryDirectory() stringByAppendingPathComponent:makeTmpFilename];
+  
+  BOOL worked = [LZMAExtractor extractArchiveEntry:make7zResPath archiveEntry:makeTmpFilename outPath:makeTmpPath];
+  NSAssert(worked, @"worked");
+  
+  // Note that it will not be possible to hold this massive file in memory or even map the whole file.
+  // It can only be streamed from disk.
+  
+  BOOL exists = fileExists(makeTmpPath);
+  NSAssert(exists, @"exists");
+  
+  uint32_t size = filesize((char*)[makeTmpPath UTF8String]);
+  
+  NSLog(@"%@ : size %d", makeTmpFilename, size);
+  
+  // 500 megs
+
+  NSAssert(size == 1073741824/2, @"size");
+  
+  // Make sure to delete this massive file
+  
+  worked = [[NSFileManager defaultManager] removeItemAtPath:makeTmpPath error:nil];
+  NSAssert(worked, @"worked");
+  
+  return;
+}
+
 // This test attempts to extract a massive 1 gig file out of testBig.7z, the file
 // is so large that it cannot be held in regular memory on iOS. It also it too big
 // to be held in virtual memory as a memory mapped file, so the only way that this
@@ -102,7 +145,7 @@ uint32_t filesize(char *filepath) {
 	NSString *make7zResPath = [[NSBundle mainBundle] pathForResource:make7zFilename ofType:nil];
   NSAssert(make7zResPath, @"can't find %@", make7zFilename);
   
-  // Extract single entry "big.data" and save it as "tmp/make.out.txt" in the tmp dir.
+  // Extract single entry "big.data" into the tmp dir
   
 	NSString *makeTmpFilename = @"big.data";
 	NSString *makeTmpPath = [NSTemporaryDirectory() stringByAppendingPathComponent:makeTmpFilename];
@@ -137,7 +180,8 @@ uint32_t filesize(char *filepath) {
   // Override point for customization after application launch
   [window makeKeyAndVisible];
   
-  [self testSmall];
+  //[self testSmall];
+  [self testMed];
   //[self testBig];
 
   NSLog(@"DONE");
