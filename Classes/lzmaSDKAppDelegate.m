@@ -45,14 +45,17 @@ uint32_t filesize(char *filepath) {
 
 - (void) testSmall
 {
+  BOOL worked;
+  
   // Extract files from archive into named dir in the temp dir
   
 	NSString *tmpDirname = @"Extract7z";
-	NSString *make7zFilename = @"test.7z";
-	NSString *make7zResPath = [[NSBundle mainBundle] pathForResource:make7zFilename ofType:nil];
-  NSAssert(make7zResPath, @"can't find test.7z");
+	NSString *archiveFilename = @"test.7z";
+	NSString *archiveResPath = [[NSBundle mainBundle] pathForResource:archiveFilename ofType:nil];
+  NSAssert(archiveResPath, @"can't find test.7z");
   
-  NSArray *contents = [LZMAExtractor extract7zArchive:make7zResPath tmpDirName:tmpDirname];
+  NSArray *contents = [LZMAExtractor extract7zArchive:archiveResPath
+                                           tmpDirName:tmpDirname];
   
   for (NSString *entryPath in contents) {
     NSData *outputData = [NSData dataWithContentsOfFile:entryPath];
@@ -65,10 +68,13 @@ uint32_t filesize(char *filepath) {
   
   // Extract single entry "make.out" and save it as "tmp/make.out.txt" in the tmp dir.
   
+  NSString *entryFilename = @"make.out";
 	NSString *makeTmpFilename = @"make.out.txt";
 	NSString *makeTmpPath = [NSTemporaryDirectory() stringByAppendingPathComponent:makeTmpFilename];
   
-  BOOL worked = [LZMAExtractor extractArchiveEntry:make7zResPath archiveEntry:@"make.out" outPath:makeTmpPath];
+  worked = [LZMAExtractor extractArchiveEntry:archiveResPath
+                                 archiveEntry:entryFilename
+                                      outPath:makeTmpPath];
   
   if (worked) {
     NSData *outputData = [NSData dataWithContentsOfFile:makeTmpPath];
@@ -131,8 +137,8 @@ uint32_t filesize(char *filepath) {
   // Override point for customization after application launch
   [window makeKeyAndVisible];
   
-  //[self testSmall];
-  [self testBig];
+  [self testSmall];
+  //[self testBig];
 
   NSLog(@"DONE");
   

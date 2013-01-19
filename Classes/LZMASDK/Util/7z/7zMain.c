@@ -511,7 +511,7 @@ static void GetAttribString(UInt32 wa, Bool isDir, char *s)
 
 //#define DEBUG_OUTPUT
 
-int do7z_extract_entry(char *archivePath, char *entryName, char *entryPath)
+int do7z_extract_entry(char *archivePath, char *archiveCachePath, char *entryName, char *entryPath)
 {
   CFileInStream archiveStream;
   CLookToRead lookStream;
@@ -586,6 +586,8 @@ int do7z_extract_entry(char *archivePath, char *entryName, char *entryPath)
       res = SZ_ERROR_FAIL;
     }
 */
+    
+    assert(archiveCachePath);
     
     if (entryName == NULL) {
       extractAllFiles = 1;
