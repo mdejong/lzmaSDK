@@ -588,18 +588,16 @@ int do7z_extract_entry(char *archivePath, char *archiveCachePath, char *entryNam
     {
       UInt32 i;
       
-      /*
-       if you need cache, use these 3 variables.
-       if you use external function, you can make these variable as static.
-       */
-      UInt32 blockIndex = 0xFFFFFFFF; /* it can have any value before first call (if outBuffer = 0) */
-      Byte *outBuffer = 0; /* it must be 0 before first call for each new archive. */
-      size_t outBufferSize = 0;  /* it can have any value before first call (if outBuffer = 0) */
+      // The dictionary cache contains data decompressed from the archive. It is managed by
+      // the library and must be freed when done with processing of a specific archive.
+      // Note that the cache cannot be saved from one execution to the next, it must
+      // not exist after this function is done executing.
+      
+      SzArEx_DictCache dictCache;
+      SzArEx_DictCache_init(&dictCache, &allocImp);
       
       for (i = 0; i < db.db.NumFiles; i++)
       {
-        size_t offset = 0;
-        size_t outSizeProcessed = 0;
         const CSzFileItem *f = db.db.Files + i;
         size_t len;
         if (f->IsDir && !fullPaths)
@@ -658,9 +656,10 @@ int do7z_extract_entry(char *archivePath, char *archiveCachePath, char *entryNam
           
           foundMatchingEntryName = 1;
           
-          res = SzArEx_Extract(&db, &lookStream.s, i,
-                               &blockIndex, &outBuffer, &outBufferSize,
-                               &offset, &outSizeProcessed,
+          res = SzArEx_Extract(&db,
+                               &lookStream.s,
+                               i, // archive entry offset
+                               &dictCache,
                                &allocImp, &allocTempImp);
           if (res != SZ_OK)
             break;
@@ -720,8 +719,9 @@ int do7z_extract_entry(char *archivePath, char *archiveCachePath, char *entryNam
             res = SZ_ERROR_FAIL;
             break;
           }
-          processedSize = outSizeProcessed;
-          if (File_Write(&outFile, outBuffer + offset, &processedSize) != 0 || processedSize != outSizeProcessed)
+          processedSize = dictCache.outSizeProcessed;
+          void *entryPtr = dictCache.outBuffer + dictCache.entryOffset;
+          if (File_Write(&outFile, entryPtr, &processedSize) != 0 || processedSize != dictCache.outSizeProcessed)
           {
             PrintError("can not write output file");
             res = SZ_ERROR_FAIL;
@@ -738,7 +738,7 @@ int do7z_extract_entry(char *archivePath, char *archiveCachePath, char *entryNam
         printf("\n");
 #endif
       }
-      IAlloc_Free(&allocImp, outBuffer);
+      SzArEx_DictCache_free(&dictCache);
     }
   }
   SzArEx_Free(&db, &allocImp);

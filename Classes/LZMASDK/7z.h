@@ -8,6 +8,8 @@
 
 EXTERN_C_BEGIN
 
+//#define _7ZIP_CRC_SUPPORT
+
 #define k7zStartHeaderSize 0x20
 #define k7zSignatureSize 6
 extern Byte k7zSignature[k7zSignatureSize];
@@ -125,7 +127,10 @@ void SzAr_Free(CSzAr *p, ISzAlloc *alloc);
 
 /*
   SzExtract extracts file from archive
-
+  
+  Pass an initialized pointer to a SzArEx_DictCache object, this record will
+  contain the allocated/mapped buffer that holds decompressed data.
+ 
   *outBuffer must be 0 before first call for each new archive.
 
   Extracting cache:
@@ -140,8 +145,30 @@ void SzAr_Free(CSzAr *p, ISzAlloc *alloc);
     If you use external function, you can declare these 3 cache variables
     (blockIndex, outBuffer, outBufferSize) as static in that external function.
     
-    Free *outBuffer and set *outBuffer to 0, if you want to flush cache.
+    To flush the cache, invoke SzArEx_DictCache_free().
 */
+
+typedef struct
+{
+  /* Ref to malloc implementation */
+  ISzAlloc *allocMain;  
+  /* Default to 0xFFFFFFFF, can have any value before first call (if outBuffer = 0) */
+  UInt32 blockIndex;
+  /* must be 0 (NULL) before first call for each new archive */
+  Byte *outBuffer;
+  /* init to 0, can have any value before first call */
+  size_t outBufferSize;
+  /* byte offset in outBuffer where decoded entry begins */
+  size_t entryOffset;
+  /* The size in bytes of a specific entry extracted from an archive */
+  size_t outSizeProcessed;
+} SzArEx_DictCache;
+
+void
+SzArEx_DictCache_init(SzArEx_DictCache *dictCache, ISzAlloc *allocMain);
+
+void
+SzArEx_DictCache_free(SzArEx_DictCache *dictCache);
 
 typedef struct
 {
@@ -176,11 +203,7 @@ SRes SzArEx_Extract(
     const CSzArEx *db,
     ILookInStream *inStream,
     UInt32 fileIndex,         /* index of file */
-    UInt32 *blockIndex,       /* index of solid block */
-    Byte **outBuffer,         /* pointer to pointer to output buffer (allocated with allocMain) */
-    size_t *outBufferSize,    /* buffer size for output buffer */
-    size_t *offset,           /* offset of stream for required file in *outBuffer */
-    size_t *outSizeProcessed, /* size of file in *outBuffer */
+    SzArEx_DictCache *dictCache,
     ISzAlloc *allocMain,
     ISzAlloc *allocTemp);
 

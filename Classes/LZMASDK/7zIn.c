@@ -1337,28 +1337,22 @@ SRes SzArEx_Extract(
     const CSzArEx *p,
     ILookInStream *inStream,
     UInt32 fileIndex,
-    UInt32 *blockIndex,
-    Byte **outBuffer,
-    size_t *outBufferSize,
-    size_t *offset,
-    size_t *outSizeProcessed,
+    SzArEx_DictCache *dictCache,
     ISzAlloc *allocMain,
     ISzAlloc *allocTemp)
 {
   UInt32 folderIndex = p->FileIndexToFolderIndexMap[fileIndex];
   SRes res = SZ_OK;
-  *offset = 0;
-  *outSizeProcessed = 0;
+  dictCache->entryOffset = 0;
+  dictCache->outSizeProcessed = 0;
   if (folderIndex == (UInt32)-1)
   {
-    IAlloc_Free(allocMain, *outBuffer);
-    *blockIndex = folderIndex;
-    *outBuffer = 0;
-    *outBufferSize = 0;
+    SzArEx_DictCache_free(dictCache);
+    dictCache->blockIndex = folderIndex;
     return SZ_OK;
   }
 
-  if (*outBuffer == 0 || *blockIndex != folderIndex)
+  if (dictCache->outBuffer == 0 || dictCache->blockIndex != folderIndex)
   {
     CSzFolder *folder = p->db.Folders + folderIndex;
     UInt64 unpackSizeSpec = SzFolder_GetUnpackSize(folder);
@@ -1367,19 +1361,19 @@ SRes SzArEx_Extract(
 
     if (unpackSize != unpackSizeSpec)
       return SZ_ERROR_MEM;
-    *blockIndex = folderIndex;
-    IAlloc_Free(allocMain, *outBuffer);
-    *outBuffer = 0;
     
+    SzArEx_DictCache_free(dictCache);
+    dictCache->blockIndex = folderIndex;
+
     RINOK(LookInStream_SeekTo(inStream, startOffset));
     
     if (res == SZ_OK)
     {
-      *outBufferSize = unpackSize;
+      dictCache->outBufferSize = unpackSize;
       if (unpackSize != 0)
       {
-        *outBuffer = (Byte *)IAlloc_Alloc(allocMain, unpackSize);
-        if (*outBuffer == 0)
+        dictCache->outBuffer = (Byte *)IAlloc_Alloc(allocMain, unpackSize);
+        if (dictCache->outBuffer == 0)
           res = SZ_ERROR_MEM;
       }
       if (res == SZ_OK)
@@ -1387,13 +1381,13 @@ SRes SzArEx_Extract(
         res = SzFolder_Decode(folder,
           p->db.PackSizes + p->FolderStartPackStreamIndex[folderIndex],
           inStream, startOffset,
-          *outBuffer, unpackSize, allocTemp);
+          dictCache->outBuffer, unpackSize, allocTemp);
         if (res == SZ_OK)
         {
           if (folder->UnpackCRCDefined)
           {
 #ifdef _7ZIP_CRC_SUPPORT
-            if (CrcCalc(*outBuffer, unpackSize) != folder->UnpackCRC)
+            if (CrcCalc(dictCache->outBuffer, unpackSize) != folder->UnpackCRC)
               res = SZ_ERROR_CRC;
 #endif
           }
@@ -1405,16 +1399,36 @@ SRes SzArEx_Extract(
   {
     UInt32 i;
     CSzFileItem *fileItem = p->db.Files + fileIndex;
-    *offset = 0;
+    dictCache->entryOffset = 0;
     for (i = p->FolderStartFileIndex[folderIndex]; i < fileIndex; i++)
-      *offset += (UInt32)p->db.Files[i].Size;
-    *outSizeProcessed = (size_t)fileItem->Size;
-    if (*offset + *outSizeProcessed > *outBufferSize)
+      dictCache->entryOffset += (UInt32)p->db.Files[i].Size;
+    dictCache->outSizeProcessed = (size_t)fileItem->Size;
+    if (dictCache->entryOffset + dictCache->outSizeProcessed > dictCache->outBufferSize)
       return SZ_ERROR_FAIL;
 #ifdef _7ZIP_CRC_SUPPORT
-    if (fileItem->CrcDefined && CrcCalc(*outBuffer + *offset, *outSizeProcessed) != fileItem->Crc)
+    if (fileItem->CrcDefined && CrcCalc(dictCache->outBuffer + dictCache->entryOffset, dictCache->outSizeProcessed) != fileItem->Crc)
       res = SZ_ERROR_CRC;
 #endif
   }
   return res;
+}
+
+void
+SzArEx_DictCache_init(SzArEx_DictCache *dictCache, ISzAlloc *allocMain)
+{
+  dictCache->allocMain = allocMain;
+  dictCache->blockIndex = 0xFFFFFFFF;
+  dictCache->outBuffer = 0;
+  dictCache->outBufferSize = 0;
+  dictCache->entryOffset = 0;
+  dictCache->outSizeProcessed = 0;
+}
+
+void
+SzArEx_DictCache_free(SzArEx_DictCache *dictCache)
+{
+  if (dictCache->outBuffer != 0) {
+    IAlloc_Free(dictCache->allocMain, dictCache->outBuffer);
+  }
+  SzArEx_DictCache_init(dictCache, dictCache->allocMain);
 }
