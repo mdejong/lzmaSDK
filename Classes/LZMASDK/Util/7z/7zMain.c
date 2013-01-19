@@ -572,20 +572,7 @@ int do7z_extract_entry(char *archivePath, char *archiveCachePath, char *entryNam
   res = SzArEx_Open(&db, &lookStream.s, &allocImp, &allocTempImp);
   if (res == SZ_OK)
   {
-    int listCommand = 0, testCommand = 0, extractCommand = 1, fullPaths = 0;
-/*
-    char *command = args[1];
-    int listCommand = 0, testCommand = 0, extractCommand = 0, fullPaths = 0;
-    if (strcmp(command, "l") == 0) listCommand = 1;
-    else if (strcmp(command, "t") == 0) testCommand = 1;
-    else if (strcmp(command, "e") == 0) extractCommand = 1;
-    else if (strcmp(command, "x") == 0) { extractCommand = 1; fullPaths = 1; }
-    else
-    {
-      PrintError("incorrect command");
-      res = SZ_ERROR_FAIL;
-    }
-*/
+    const int extractCommand = 1, fullPaths = 0;
     
     assert(archiveCachePath);
     
@@ -615,7 +602,7 @@ int do7z_extract_entry(char *archivePath, char *archiveCachePath, char *entryNam
         size_t outSizeProcessed = 0;
         const CSzFileItem *f = db.db.Files + i;
         size_t len;
-        if (listCommand == 0 && f->IsDir && !fullPaths)
+        if (f->IsDir && !fullPaths)
           continue;
         len = SzArEx_GetFileNameUtf16(&db, i, NULL);
         
@@ -632,32 +619,7 @@ int do7z_extract_entry(char *archivePath, char *archiveCachePath, char *entryNam
         }
         
         SzArEx_GetFileNameUtf16(&db, i, temp);
-        if (listCommand)
-        {
-          char attr[8], s[32], t[32];
-          
-          GetAttribString(f->AttribDefined ? f->Attrib : 0, f->IsDir, attr);
-          
-          UInt64ToStr(f->Size, s);
-          if (f->MTimeDefined)
-            ConvertFileTimeToString(&f->MTime, t);
-          else
-          {
-            size_t j;
-            for (j = 0; j < 19; j++)
-              t[j] = ' ';
-            t[j] = '\0';
-          }
-          
-#ifdef DEBUG_OUTPUT
-          printf("%s %s %10s  ", t, attr, s);
-          PrintString(temp);
-          if (f->IsDir)
-            printf("/");
-          printf("\n");
-#endif
-          continue;
-        }
+
 #ifdef DEBUG_OUTPUT
         printf(testCommand ?
                "Testing    ":
@@ -703,7 +665,7 @@ int do7z_extract_entry(char *archivePath, char *archiveCachePath, char *entryNam
           if (res != SZ_OK)
             break;
         }
-        if (!testCommand)
+        
         {
           CSzFile outFile;
           size_t processedSize;
@@ -771,10 +733,6 @@ int do7z_extract_entry(char *archivePath, char *archiveCachePath, char *entryNam
             res = SZ_ERROR_FAIL;
             break;
           }
-#ifdef USE_WINDOWS_FILE
-          if (f->AttribDefined)
-            SetFileAttributesW(destPath, f->Attrib);
-#endif
         }
 #ifdef DEBUG_OUTPUT
         printf("\n");
