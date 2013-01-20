@@ -1559,11 +1559,12 @@ SzArEx_DictCache_mmap(SzArEx_DictCache *dictCache)
     } else if (errnoVal == EOVERFLOW) {
       // mmap result EOVERFLOW : addresses exceed the maximum offset
       retval = 1;
+    } else if (errnoVal == ENOMEM) {
+      // Note that ENOMEM is checked here since it is actually likely to happen
+      // due to running out of memory that could be mapped. Return a special code.
+      retval = 2;
     }
-    
-    // Note that ENOMEM is not checked here since it is actually likely to happen
-    // due to running out of memory that could be mapped.
-    
+        
     fclose(mapfile);
     return retval;
   }

@@ -30,6 +30,7 @@
 #endif
 
 #include <assert.h>
+#include <unistd.h>
 
 static ISzAlloc g_Alloc = { SzAlloc, SzFree };
 
@@ -754,6 +755,11 @@ int do7z_extract_entry(char *archivePath, char *archiveCachePath, char *entryNam
     printf("\nCould not find matching entry in archive\n");
 #endif
     return 1;    
+  }
+  
+  if (archiveCachePath) {
+    // remove cache file if it exists
+    unlink(archiveCachePath);
   }
   
   if (res == SZ_OK)

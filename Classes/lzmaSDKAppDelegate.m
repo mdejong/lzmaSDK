@@ -180,8 +180,8 @@ uint32_t filesize(char *filepath) {
   // Override point for customization after application launch
   [window makeKeyAndVisible];
   
-  [self testSmall];
-  //[self testMed];
+  //[self testSmall];
+  [self testMed];
   //[self testBig];
 
   NSLog(@"DONE");
