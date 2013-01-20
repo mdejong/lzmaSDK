@@ -6,6 +6,8 @@
 
 #include "7zBuf.h"
 
+#include "stdio.h"
+
 EXTERN_C_BEGIN
 
 //#define _7ZIP_CRC_SUPPORT
@@ -162,6 +164,15 @@ typedef struct
   size_t entryOffset;
   /* The size in bytes of a specific entry extracted from an archive */
   size_t outSizeProcessed;
+
+  /* If dictionary memory is being paged to disk via a writable mmap region, then
+   * the mapFilename is non-NULL. */
+  char *mapFilename;
+  
+  /*  If dictionary memory is being paged to disk and the file is currently open,
+   *  then this file pointer if non-NULL. */
+  FILE *mapFile;
+  size_t mapSize;
 } SzArEx_DictCache;
 
 void
@@ -169,6 +180,12 @@ SzArEx_DictCache_init(SzArEx_DictCache *dictCache, ISzAlloc *allocMain);
 
 void
 SzArEx_DictCache_free(SzArEx_DictCache *dictCache);
+
+int
+SzArEx_DictCache_mmap(SzArEx_DictCache *dictCache);
+
+void
+SzArEx_DictCache_munmap(SzArEx_DictCache *dictCache);
 
 typedef struct
 {

@@ -9,6 +9,10 @@
 #endif
 #include "CpuArch.h"
 
+#include <errno.h>
+#include <sys/mman.h>
+#include <assert.h>
+
 Byte k7zSignature[k7zSignatureSize] = {'7', 'z', 0xBC, 0xAF, 0x27, 0x1C};
 
 #define RINOM(x) { if ((x) == 0) return SZ_ERROR_MEM; }
@@ -1372,7 +1376,14 @@ SRes SzArEx_Extract(
       dictCache->outBufferSize = unpackSize;
       if (unpackSize != 0)
       {
-        dictCache->outBuffer = (Byte *)IAlloc_Alloc(allocMain, unpackSize);
+        if (dictCache->mapFilename /*&& (unpackSize >= 1024*1024)*/) {
+          // map to disk is enabled and file is larger than 1 megabyte.
+          // note that an error condition is checked by seeing if
+          // dictCache->outBuffer after a map attempt
+          SzArEx_DictCache_mmap(dictCache);
+        } else {
+          dictCache->outBuffer = (Byte *)IAlloc_Alloc(allocMain, unpackSize);
+        }
         if (dictCache->outBuffer == 0)
           res = SZ_ERROR_MEM;
       }
@@ -1422,13 +1433,160 @@ SzArEx_DictCache_init(SzArEx_DictCache *dictCache, ISzAlloc *allocMain)
   dictCache->outBufferSize = 0;
   dictCache->entryOffset = 0;
   dictCache->outSizeProcessed = 0;
+  // Note that the mapFilename is not reset to NULL here
+  dictCache->mapFile = NULL;
 }
 
 void
 SzArEx_DictCache_free(SzArEx_DictCache *dictCache)
 {
-  if (dictCache->outBuffer != 0) {
+  if (dictCache->mapFile) {
+    // unmap memory
+    SzArEx_DictCache_munmap(dictCache);
+    // close file handle (it will be set to NULL in init method)
+    fclose(dictCache->mapFile);
+  } else if (dictCache->outBuffer != 0) {
+    // free memory that was allocated on the heap
     IAlloc_Free(dictCache->allocMain, dictCache->outBuffer);
   }
   SzArEx_DictCache_init(dictCache, dictCache->allocMain);
+}
+
+#define SM_PAGESIZE 4096
+
+int
+SzArEx_DictCache_mmap(SzArEx_DictCache *dictCache)
+{
+  assert(dictCache->mapFilename);
+  assert(dictCache->mapFile == NULL);
+  
+  FILE *mapfile = fopen(dictCache->mapFilename, "wb+");
+  
+  if (mapfile == NULL) {
+    return 1;
+  }
+
+  // Extend the file size so that it is a known length before mapping.
+  size_t mapSize = dictCache->outBufferSize;
+  assert(mapSize > 0);
+  
+  // Make sure mapSize is in terms of whole pages
+  {
+    int numPages = mapSize / SM_PAGESIZE;
+    if ((mapSize % SM_PAGESIZE) > 0) {
+      numPages += 1;
+    }
+    mapSize = (numPages * SM_PAGESIZE);
+  }
+  
+  assert(mapSize >= SM_PAGESIZE);
+  assert((mapSize % SM_PAGESIZE) == 0);
+  dictCache->mapSize = mapSize;
+  
+  if (1) {
+    // Seek to the end of the file should create holes in file, but this
+    // does not seem to create a writable mapping as the access at the
+    // end of this function crashes.
+    
+    int seekResult = fseek(mapfile, mapSize - 1, SEEK_SET);
+    assert(seekResult == 0);
+    
+    // Need to actually write a byte in order for the file
+    // to be extended to this length.
+    char oneByte = 0;
+    int writeResult = fwrite(&oneByte, 1, 1, mapfile);
+    assert(writeResult == 1);
+    
+    fflush(mapfile);
+  } else {
+    // Instead of using seek to write a whole in the file, write
+    // empty zero pages until the file is the proper length
+    // but with nothing but zeros in it.
+    char page[SM_PAGESIZE];
+    bzero(page, SM_PAGESIZE);
+    for (int pageIndex = 0; pageIndex < (mapSize / SM_PAGESIZE); pageIndex++) {
+      int writeNum = fwrite(page, 1, SM_PAGESIZE, mapfile);
+      assert(writeNum == SM_PAGESIZE);
+    }
+  }
+  
+  off_t fileOffset = ftell(mapfile);
+  assert(fileOffset == mapSize);
+  
+  int fd = fileno(mapfile);
+  off_t offset = 0;
+    
+  int protection;
+  int flags;
+  
+  int readWriteMapping = 1;
+  
+  if (!readWriteMapping) {
+    // Normal read only shared mapping
+    protection = PROT_READ;
+    flags = MAP_FILE | MAP_SHARED;
+  } else {
+    // read + write mapping
+    protection = PROT_READ | PROT_WRITE;
+    //flags = MAP_FILE | MAP_SHARED | MAP_NOCACHE;
+    //flags = MAP_ANON | MAP_NOCACHE;
+    //flags = MAP_ANON | MAP_PRIVATE;
+    flags = MAP_FILE | MAP_SHARED;
+  }
+
+  char *mappedData = mmap(NULL, mapSize, protection, flags, fd, offset);
+  
+  if (mappedData == MAP_FAILED) {
+    int errnoVal = errno;
+    int retval = 0;
+    // Check for known fatal errors
+    
+    if (errnoVal == EACCES) {
+      // mmap result EACCES : file not opened for reading or writing
+      retval = 1;
+    } else if (errnoVal == EBADF) {
+      // mmap result EBADF : bad file descriptor
+      retval = 1;
+    } else if (errnoVal == EINVAL) {
+      // mmap result EINVAL
+      retval = 1;
+    } else if (errnoVal == ENODEV) {
+      // mmap result ENODEV : page does not support mapping
+      retval = 1;
+    } else if (errnoVal == ENXIO) {
+      // mmap result ENXIO : invalid addresses
+      retval = 1;
+    } else if (errnoVal == EOVERFLOW) {
+      // mmap result EOVERFLOW : addresses exceed the maximum offset
+      retval = 1;
+    }
+    
+    // Note that ENOMEM is not checked here since it is actually likely to happen
+    // due to running out of memory that could be mapped.
+    
+    fclose(mapfile);
+    return retval;
+  }
+  
+  // We always map at least 1 page of memory, so test basic writing of bytes by
+  // writing zero to the first and second bytes in the mapped memory.
+  
+  mappedData[0] = 0;
+  mappedData[1] = 0;
+
+  dictCache->mapFile = mapfile;
+  dictCache->outBuffer = (void*)mappedData;
+
+  return 0;
+}
+
+void
+SzArEx_DictCache_munmap(SzArEx_DictCache *dictCache)
+{
+  if (dictCache->mapFilename != NULL) {
+    int result = munmap(dictCache->outBuffer, dictCache->mapSize);
+    assert(result == 0);
+    dictCache->outBuffer = NULL;
+    dictCache->mapSize = 0;
+  }
 }

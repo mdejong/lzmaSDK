@@ -595,6 +595,9 @@ int do7z_extract_entry(char *archivePath, char *archiveCachePath, char *entryNam
       
       SzArEx_DictCache dictCache;
       SzArEx_DictCache_init(&dictCache, &allocImp);
+
+      // Enable mmap to file if the archive would be larger than 1/2 meg
+      dictCache.mapFilename = archiveCachePath;
       
       for (i = 0; i < db.db.NumFiles; i++)
       {
