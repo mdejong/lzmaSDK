@@ -1376,7 +1376,7 @@ SRes SzArEx_Extract(
       dictCache->outBufferSize = unpackSize;
       if (unpackSize != 0)
       {
-        if (dictCache->mapFilename /*&& (unpackSize >= 1024*1024)*/) {
+        if (dictCache->mapFilename && (unpackSize >= 1024*1024)) {
           // map to disk is enabled and file is larger than 1 megabyte.
           // note that an error condition is checked by seeing if
           // dictCache->outBuffer after a map attempt
@@ -1435,6 +1435,7 @@ SzArEx_DictCache_init(SzArEx_DictCache *dictCache, ISzAlloc *allocMain)
   dictCache->outSizeProcessed = 0;
   // Note that the mapFilename is not reset to NULL here
   dictCache->mapFile = NULL;
+  dictCache->mapSize = 0;
 }
 
 void
@@ -1444,6 +1445,8 @@ SzArEx_DictCache_free(SzArEx_DictCache *dictCache)
     // unmap memory
     SzArEx_DictCache_munmap(dictCache);
     // close file handle (it will be set to NULL in init method)
+    // FIXME: can we close the FILE* and just hold on to the mmap pointer? I think
+    // that will keep the fd open until the mapping is closed.
     fclose(dictCache->mapFile);
   } else if (dictCache->outBuffer != 0) {
     // free memory that was allocated on the heap
@@ -1564,7 +1567,7 @@ SzArEx_DictCache_mmap(SzArEx_DictCache *dictCache)
       // due to running out of memory that could be mapped. Return a special code.
       retval = 2;
     }
-        
+    
     fclose(mapfile);
     return retval;
   }
