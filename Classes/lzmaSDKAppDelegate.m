@@ -129,64 +129,112 @@ uint32_t filesize(char *filepath) {
   return;
 }
 
-// This test attempts to extract a massive 1 gig file out of testBig.7z, the file
+// This test attempts to extract a massive 1 gig file out of an archive, the file
 // is so large that it cannot be held in regular memory on iOS. It also it too big
 // to be held in virtual memory as a memory mapped file, so the only way that this
 // file can be written to the disk is by streaming one buffer at a time. This test
 // case basically checks the implementation of the SDK to verify that data is decoded
 // and streamed to the disk as opposed to one massive malloc call that will fail
-// on an embedded system.
+// on an embedded system. This test will pass on the Simulator, because MacOSX will
+// automatically switch to virtual memory for a very large malloc.
 
-- (void) testBig
+- (void) testOneGigFailTooBig
 {
-  // Extract files from archive into named dir in the temp dir
+  NSLog(@"START testOneGigFailTooBig");
   
-	NSString *make7zFilename = @"testBig.7z";
+  // This archive contains a 1 gigabyte file created like so:
+  // 7za a -mx=9 onegig.7z onegig.data
+  //
+  // This should fail to decompress on an iOS device because the size of the vmem
+  // mapping is larger than the maximum size allowed by the OS.
+  //
+  // The output of:
+  //
+  // 7za l -slt onegig.7z
+  //
+  // Shows that the entire one gig file was compressed down into 1 single block, so
+  // there is no way for iOS to allocate a buffer that large.
+  
+	NSString *make7zFilename = @"onegig.7z";
 	NSString *make7zResPath = [[NSBundle mainBundle] pathForResource:make7zFilename ofType:nil];
   NSAssert(make7zResPath, @"can't find %@", make7zFilename);
   
-  // Extract single entry "big.data" into the tmp dir
+  // Extract single entry "onegig.data" into the tmp dir
   
-	NSString *makeTmpFilename = @"big.data";
+	NSString *makeTmpFilename = @"onegig.data";
 	NSString *makeTmpPath = [NSTemporaryDirectory() stringByAppendingPathComponent:makeTmpFilename];
   
+  // Make sure file does not exist from some previous run at this point
+  [[NSFileManager defaultManager] removeItemAtPath:makeTmpPath error:nil];
+  
   BOOL worked = [LZMAExtractor extractArchiveEntry:make7zResPath archiveEntry:makeTmpFilename outPath:makeTmpPath];
-  NSAssert(worked, @"worked");
+  
+  if (TARGET_IPHONE_SIMULATOR) {
+    NSAssert(worked == TRUE, @"worked");
+  } else {
+    // Device, should fail
+    NSAssert(worked == FALSE, @"worked");
+    
+    BOOL exists = fileExists(makeTmpPath);
+    NSAssert(exists == FALSE, @"exists");
+  }
   
   // Note that it will not be possible to hold this massive file in memory or even map the whole file.
   // It can only be streamed from disk.
-
+  
   BOOL exists = fileExists(makeTmpPath);
-  NSAssert(exists, @"exists");
-
-  uint32_t size = filesize((char*)[makeTmpPath UTF8String]);
+  if (exists) {
+    uint32_t size = filesize((char*)[makeTmpPath UTF8String]);
+    
+    NSLog(@"%@ : size %d", makeTmpFilename, size);
+    
+    // 1 gig
+    
+    NSAssert(size == 1073741824, @"size");
+    
+    // Make sure to delete this massive file
+    
+    worked = [[NSFileManager defaultManager] removeItemAtPath:makeTmpPath error:nil];
+    NSAssert(worked, @"worked");    
+  }
   
-  NSLog(@"%@ : size %d", makeTmpFilename, size);
-
-  // 1 gig
-  
-  NSAssert(size == 1073741824, @"size");
-  
-  // Make sure to delete this massive file
-  
-  worked = [[NSFileManager defaultManager] removeItemAtPath:makeTmpPath error:nil];
-  NSAssert(worked, @"worked");
-  
+  NSLog(@"DONE testOneGigFailTooBig");
   return;
 }
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application
-{  
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
   // Override point for customization after application launch
   [window makeKeyAndVisible];
   
-  [self testSmall];
-  //[self testMed];
-  //[self testBig];
+  NSTimer *timer = [NSTimer timerWithTimeInterval:1.0
+                                       target:self
+                                         selector:@selector(startupTimer:)
+                                         userInfo:nil
+                                          repeats:FALSE];
+  
+  
+  [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
+  
+  return TRUE;
+}
 
+// This callback timer runs after the app has started. If we left this blocking logic in
+// didFinishLaunchingWithOptions then the OS would think the app did not start and it could
+// be killed.
+
+- (void) startupTimer:(NSTimer*)timer
+{
+  NSLog(@"START");
+  
+  //[self testSmall];
+  //[self testMed];
+  
+  [self testOneGigFailTooBig];
+  
   NSLog(@"DONE");
   
-  return;  
+  window.backgroundColor = [UIColor greenColor];  
 }
 
 - (void)dealloc {

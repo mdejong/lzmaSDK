@@ -2,6 +2,9 @@
 # This file size was chosen because it is larger than the 700 megabyte
 # mapped file size limit in iOS.
 
+set outfilename "onegig.data"
+set numMegs 1024
+
 set oneK ""
 for {set i 0} {$i < 1024} {incr i} {
   append oneK "\0"
@@ -12,19 +15,20 @@ if {[string length $oneMeg] != (1024 * 1024)} {
   exit 0
 }
 
-set filename big.data
-set fd [open $filename w]
+set fd [open $outfilename w]
 fconfigure $fd -encoding binary -translation binary
-for {set i 0} {$i < 1024} {incr i} {
+for {set i 0} {$i < $numMegs} {incr i} {
   puts -nonewline $fd $oneMeg
 }
 close $fd
 
-set len [file size $filename]
-if {$len != (1024 * 1024 * 1024)} {
-  puts "len is $len, not one gig"
+set len [file size $outfilename]
+set expected_len [expr {1024 * 1024 * $numMegs}]
+if {$len != $expected_len} {
+  puts "expected len = $expected_len, len was $len"
   exit 0
 }
 
-puts "wrote $filename"
+puts "wrote $outfilename"
+puts "$numMegs megs"
 
