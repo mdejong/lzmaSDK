@@ -1376,7 +1376,7 @@ SRes SzArEx_Extract(
       dictCache->outBufferSize = unpackSize;
       if (unpackSize != 0)
       {
-        if (dictCache->mapFilename && (unpackSize >= 1024*1024)) {
+        if (dictCache->mapFilename && (unpackSize >= k7zUnpackMapDictionaryInMemoryMaxNumBytes)) {
           // map to disk is enabled and file is larger than 1 megabyte.
           // note that an error condition is checked by seeing if
           // dictCache->outBuffer after a map attempt

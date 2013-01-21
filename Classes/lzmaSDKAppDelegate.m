@@ -41,9 +41,12 @@ uint32_t filesize(char *filepath) {
 // This test decodes a small text file from the attached resource test.7z
 // This is a basic sanity check of the logic to decode an entry to a .7z archive.
 // Because the input archive and output files are small, this test case will
-// not use up much memory or emit large files.
+// not use up much memory or emit large files. Note that because this dictionary
+// size is smaller than the 1 meg k7zUnpackMapDictionaryInMemoryMaxNumBytes limit,
+// this unpack operaiton will be done entirely in memory as opposed to using
+// mapped memory that is paged to disk.
 
-- (void) testSmall
+- (void) testSmallInMem
 {
   BOOL worked;
   
@@ -235,9 +238,9 @@ uint32_t filesize(char *filepath) {
 {
   NSLog(@"START");
   
-  //[self testSmall];
+  [self testSmallInMem];
   
-  [self testHalfGig];
+  //[self testHalfGig];
   
   //[self testOneGigFailTooBig];
   

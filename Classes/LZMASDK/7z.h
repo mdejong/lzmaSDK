@@ -17,6 +17,9 @@ EXTERN_C_BEGIN
 extern Byte k7zSignature[k7zSignatureSize];
 #define k7zMajorVersion 0
 
+// 1024K = 1 Meg
+#define k7zUnpackMapDictionaryInMemoryMaxNumBytes 1024*1024
+
 enum EIdEnum
 {
   k7zIdEnd,
