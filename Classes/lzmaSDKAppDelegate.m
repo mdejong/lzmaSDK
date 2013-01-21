@@ -86,22 +86,30 @@ uint32_t filesize(char *filepath) {
   }
 }
 
-// This test will extract a 500 meg file from testMed.7z, this 500 meg file is way too large
+// This test will extract a 500 meg file from a solid archive, this 500 meg file is way too large
 // to fit into regular memory, but it is smaller than the 700 meg limit on mapped memory
-// in iOS. This method should work as long as the cached decoded data is written to a
-// mapped file.
+// in iOS. This test will pass as long as the modification to the lzma SDK is implemented
+// so that memory is paged to disk when the dictionary size is large.
+//
+// Create:
+//
+// 7za a -mx=9 halfgig.7z halfgig.data
+//
+// The output of:
+//
+// 7za l -slt halfgig.7z
+//
+// Shows that the entire 500 meg file is stored as one large block.
 
-- (void) testMed
+- (void) testHalfGig
 {
   // Extract files from archive into named dir in the temp dir
   
-  NSString *make7zFilename = @"testMed.7z";
+  NSString *make7zFilename = @"halfgig.7z";
   NSString *make7zResPath = [[NSBundle mainBundle] pathForResource:make7zFilename ofType:nil];
   NSAssert(make7zResPath, @"can't find %@", make7zFilename);
   
-  // Extract single entry "med.data" into the tmp dir
-  
-  NSString *makeTmpFilename = @"med.data";
+  NSString *makeTmpFilename = @"halfgig.data";
   NSString *makeTmpPath = [NSTemporaryDirectory() stringByAppendingPathComponent:makeTmpFilename];
   
   BOOL worked = [LZMAExtractor extractArchiveEntry:make7zResPath archiveEntry:makeTmpFilename outPath:makeTmpPath];
@@ -228,9 +236,10 @@ uint32_t filesize(char *filepath) {
   NSLog(@"START");
   
   //[self testSmall];
-  //[self testMed];
   
-  [self testOneGigFailTooBig];
+  [self testHalfGig];
+  
+  //[self testOneGigFailTooBig];
   
   NSLog(@"DONE");
   

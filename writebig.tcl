@@ -2,8 +2,11 @@
 # This file size was chosen because it is larger than the 700 megabyte
 # mapped file size limit in iOS.
 
-set outfilename "onegig.data"
-set numMegs 1024
+#set outfilename "onegig.data"
+#set numMegs 1024
+
+set outfilename "halfgig.data"
+set numMegs 512
 
 set oneK ""
 for {set i 0} {$i < 1024} {incr i} {

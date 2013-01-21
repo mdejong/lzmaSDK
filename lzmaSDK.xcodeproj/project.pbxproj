@@ -33,7 +33,7 @@
 		CD875AA411EBBAC7004A1640 /* CpuArch.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875AA211EBBAC7004A1640 /* CpuArch.c */; };
 		CD875B1311EBC037004A1640 /* 7zAlloc.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875B1011EBC037004A1640 /* 7zAlloc.c */; };
 		CD875B1411EBC037004A1640 /* 7zMain.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875B1211EBC037004A1640 /* 7zMain.c */; };
-		CDFDD09916AB432C00BA9197 /* testMed.7z in Resources */ = {isa = PBXBuildFile; fileRef = CDFDD09816AB432C00BA9197 /* testMed.7z */; };
+		CD968D3416AE04200003BCBB /* halfgig.7z in Resources */ = {isa = PBXBuildFile; fileRef = CD968D3316AE04200003BCBB /* halfgig.7z */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,7 +84,7 @@
 		CD875B1011EBC037004A1640 /* 7zAlloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 7zAlloc.c; sourceTree = "<group>"; };
 		CD875B1111EBC037004A1640 /* 7zAlloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 7zAlloc.h; sourceTree = "<group>"; };
 		CD875B1211EBC037004A1640 /* 7zMain.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 7zMain.c; sourceTree = "<group>"; };
-		CDFDD09816AB432C00BA9197 /* testMed.7z */ = {isa = PBXFileReference; lastKnownFileType = file; path = testMed.7z; sourceTree = "<group>"; };
+		CD968D3316AE04200003BCBB /* halfgig.7z */ = {isa = PBXFileReference; lastKnownFileType = file; path = halfgig.7z; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				CD33A57F11EBCF6300A4B114 /* test.7z */,
-				CDFDD09816AB432C00BA9197 /* testMed.7z */,
+				CD968D3316AE04200003BCBB /* halfgig.7z */,
 				CD4488B116ADF6100022E1AA /* onegig.7z */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* lzmaSDK-Info.plist */,
@@ -274,8 +274,8 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				CD33A58011EBCF6300A4B114 /* test.7z in Resources */,
-				CDFDD09916AB432C00BA9197 /* testMed.7z in Resources */,
 				CD4488B216ADF6100022E1AA /* onegig.7z in Resources */,
+				CD968D3416AE04200003BCBB /* halfgig.7z in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
