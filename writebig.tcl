@@ -5,8 +5,11 @@
 #set outfilename "onegig.data"
 #set numMegs 1024
 
-set outfilename "halfgig.data"
-set numMegs 512
+#set outfilename "halfgig.data"
+#set numMegs 512
+
+set outfilename "sixfiftymeg.data"
+set numMegs 650
 
 set oneK ""
 for {set i 0} {$i < 1024} {incr i} {

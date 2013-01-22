@@ -213,6 +213,79 @@ uint32_t filesize(char *filepath) {
   return;
 }
 
+// This test will extract a pair of huge 650 meg files from a single archive.
+// If both files were stored into 1 block, the mapping operation would fail
+// on the device because the mapped size would be too large. But, one can work
+// around the upper limit if absolutely required by encoding the archive
+// with multiple blocks.
+//
+// Each block is decoded one at a time, so each file is able to fit into
+// memory only one at a time. The key here is to pass these 680m arguments
+// when encoding to define the upper limit of a block size, the result is
+// that each file is contained in its own block.
+//
+// Create:
+//
+// 7za a -mx=9 -md=680m -ms=680m sixfiftymeg_2blocks.7z sixfiftymeg1.data sixfiftymeg2.data
+//
+// The output of:
+//
+// 7za l -slt sixfiftymeg_2blocks.7z
+//
+// Shows that two blocks are defined in the archive, each one contains one of the 650 meg files.
+
+- (void) decodeSixFifty:(NSString*)entryName
+{
+  // Extract files from archive into named dir in the temp dir
+  
+  NSString *archiveFilename = @"sixfiftymeg_2blocks.7z";
+  NSString *archiveResPath = [[NSBundle mainBundle] pathForResource:archiveFilename ofType:nil];
+  NSAssert(archiveResPath, @"can't find %@", archiveFilename);
+  
+  NSString *tmpPath = [NSTemporaryDirectory() stringByAppendingPathComponent:entryName];
+  
+  BOOL worked = [LZMAExtractor extractArchiveEntry:archiveResPath archiveEntry:entryName outPath:tmpPath];
+  NSAssert(worked, @"worked");
+  
+  // Note that it will not be possible to hold this massive file in memory or even map the whole file.
+  // It can only be streamed from disk.
+  
+  BOOL exists = fileExists(tmpPath);
+  NSAssert(exists, @"exists");
+  
+  uint32_t size = filesize((char*)[tmpPath UTF8String]);
+  
+  NSLog(@"%@ : size %d", entryName, size);
+  
+  // 650 megs
+  
+  NSAssert(size == (1024 * 1024 * 650), @"size");
+  
+  // Delete the file on disk
+  
+  worked = [[NSFileManager defaultManager] removeItemAtPath:tmpPath error:nil];
+  NSAssert(worked, @"worked");
+  
+  return;
+}
+
+- (void) testTwoSixFiftyInTwoBlocks
+{
+  NSLog(@"START testTwoSixFiftyInTwoBlocks");
+  
+  NSString *makeTmpFilename;
+  makeTmpFilename = @"sixfiftymeg1.data";
+  [self decodeSixFifty:makeTmpFilename];
+  
+  makeTmpFilename = @"sixfiftymeg2.data";
+  [self decodeSixFifty:makeTmpFilename];
+ 
+  NSLog(@"DONE testTwoSixFiftyInTwoBlocks");
+  
+  return;
+}
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   // Override point for customization after application launch
@@ -238,9 +311,11 @@ uint32_t filesize(char *filepath) {
 {
   NSLog(@"START");
   
-  [self testSmallInMem];
+  //[self testSmallInMem];
   
   //[self testHalfGig];
+
+  [self testTwoSixFiftyInTwoBlocks];
   
   //[self testOneGigFailTooBig];
   
