@@ -1544,11 +1544,8 @@ SzArEx_DictCache_mmap(SzArEx_DictCache *dictCache)
     protection = PROT_READ;
     flags = MAP_FILE | MAP_SHARED;
   } else {
-    // read + write mapping
+    // read + write mapping, pages are flushed to disk as needed
     protection = PROT_READ | PROT_WRITE;
-    //flags = MAP_FILE | MAP_SHARED | MAP_NOCACHE;
-    //flags = MAP_ANON | MAP_NOCACHE;
-    //flags = MAP_ANON | MAP_PRIVATE;
     flags = MAP_FILE | MAP_SHARED;
   }
 
