@@ -3,7 +3,6 @@
 //  lzmaSDK
 //
 //  Created by Moses DeJong on 11/30/09.
-//  Copyright __MyCompanyName__ 2009. All rights reserved.
 //
 
 #import "lzmaSDKAppDelegate.h"
@@ -48,6 +47,8 @@ uint32_t filesize(char *filepath) {
 
 - (void) testSmallInMem
 {
+  NSLog(@"START testSmallInMem");
+  
   BOOL worked;
   
   // Extract files from archive into named dir in the temp dir
@@ -87,6 +88,8 @@ uint32_t filesize(char *filepath) {
     NSLog(@"%@", makeTmpFilename);
     NSLog(@"%@", outStr);
   }
+  
+  NSLog(@"DONE testSmallInMem");
 }
 
 // This test will extract a 500 meg file from a solid archive, this 500 meg file is way too large
@@ -106,27 +109,29 @@ uint32_t filesize(char *filepath) {
 
 - (void) testHalfGig
 {
+  NSLog(@"START testHalfGig");
+  
   // Extract files from archive into named dir in the temp dir
   
-  NSString *make7zFilename = @"halfgig.7z";
-  NSString *make7zResPath = [[NSBundle mainBundle] pathForResource:make7zFilename ofType:nil];
-  NSAssert(make7zResPath, @"can't find %@", make7zFilename);
+  NSString *archiveFilename = @"halfgig.7z";
+  NSString *archiveResPath = [[NSBundle mainBundle] pathForResource:archiveFilename ofType:nil];
+  NSAssert(archiveResPath, @"can't find %@", archiveFilename);
   
-  NSString *makeTmpFilename = @"halfgig.data";
-  NSString *makeTmpPath = [NSTemporaryDirectory() stringByAppendingPathComponent:makeTmpFilename];
+  NSString *tmpFilename = @"halfgig.data";
+  NSString *tmpPath = [NSTemporaryDirectory() stringByAppendingPathComponent:tmpFilename];
   
-  BOOL worked = [LZMAExtractor extractArchiveEntry:make7zResPath archiveEntry:makeTmpFilename outPath:makeTmpPath];
+  BOOL worked = [LZMAExtractor extractArchiveEntry:archiveResPath archiveEntry:tmpFilename outPath:tmpPath];
   NSAssert(worked, @"worked");
   
   // Note that it will not be possible to hold this massive file in memory or even map the whole file.
   // It can only be streamed from disk.
   
-  BOOL exists = fileExists(makeTmpPath);
+  BOOL exists = fileExists(tmpPath);
   NSAssert(exists, @"exists");
   
-  uint32_t size = filesize((char*)[makeTmpPath UTF8String]);
+  uint32_t size = filesize((char*)[tmpPath UTF8String]);
   
-  NSLog(@"%@ : size %d", makeTmpFilename, size);
+  NSLog(@"%@ : size %d", tmpFilename, size);
   
   // 500 megs
 
@@ -134,8 +139,10 @@ uint32_t filesize(char *filepath) {
   
   // Make sure to delete this massive file
   
-  worked = [[NSFileManager defaultManager] removeItemAtPath:makeTmpPath error:nil];
+  worked = [[NSFileManager defaultManager] removeItemAtPath:tmpPath error:nil];
   NSAssert(worked, @"worked");
+  
+  NSLog(@"DONE testHalfGig");
   
   return;
 }
@@ -166,19 +173,19 @@ uint32_t filesize(char *filepath) {
   // Shows that the entire one gig file was compressed down into 1 single block, so
   // there is no way for iOS to allocate a buffer that large.
   
-	NSString *make7zFilename = @"onegig.7z";
-	NSString *make7zResPath = [[NSBundle mainBundle] pathForResource:make7zFilename ofType:nil];
-  NSAssert(make7zResPath, @"can't find %@", make7zFilename);
+	NSString *archiveFilename = @"onegig.7z";
+	NSString *archiveResPath = [[NSBundle mainBundle] pathForResource:archiveFilename ofType:nil];
+  NSAssert(archiveResPath, @"can't find %@", archiveFilename);
   
   // Extract single entry "onegig.data" into the tmp dir
   
-	NSString *makeTmpFilename = @"onegig.data";
-	NSString *makeTmpPath = [NSTemporaryDirectory() stringByAppendingPathComponent:makeTmpFilename];
+	NSString *tmpFilename = @"onegig.data";
+	NSString *tmpPath = [NSTemporaryDirectory() stringByAppendingPathComponent:tmpFilename];
   
   // Make sure file does not exist from some previous run at this point
-  [[NSFileManager defaultManager] removeItemAtPath:makeTmpPath error:nil];
+  [[NSFileManager defaultManager] removeItemAtPath:tmpPath error:nil];
   
-  BOOL worked = [LZMAExtractor extractArchiveEntry:make7zResPath archiveEntry:makeTmpFilename outPath:makeTmpPath];
+  BOOL worked = [LZMAExtractor extractArchiveEntry:archiveResPath archiveEntry:tmpFilename outPath:tmpPath];
   
   if (TARGET_IPHONE_SIMULATOR) {
     NSAssert(worked == TRUE, @"worked");
@@ -186,18 +193,18 @@ uint32_t filesize(char *filepath) {
     // Device, should fail
     NSAssert(worked == FALSE, @"worked");
     
-    BOOL exists = fileExists(makeTmpPath);
+    BOOL exists = fileExists(tmpPath);
     NSAssert(exists == FALSE, @"exists");
   }
   
   // Note that it will not be possible to hold this massive file in memory or even map the whole file.
   // It can only be streamed from disk.
   
-  BOOL exists = fileExists(makeTmpPath);
+  BOOL exists = fileExists(tmpPath);
   if (exists) {
-    uint32_t size = filesize((char*)[makeTmpPath UTF8String]);
+    uint32_t size = filesize((char*)[tmpPath UTF8String]);
     
-    NSLog(@"%@ : size %d", makeTmpFilename, size);
+    NSLog(@"%@ : size %d", tmpFilename, size);
     
     // 1 gig
     
@@ -205,7 +212,7 @@ uint32_t filesize(char *filepath) {
     
     // Make sure to delete this massive file
     
-    worked = [[NSFileManager defaultManager] removeItemAtPath:makeTmpPath error:nil];
+    worked = [[NSFileManager defaultManager] removeItemAtPath:tmpPath error:nil];
     NSAssert(worked, @"worked");    
   }
   
@@ -311,13 +318,13 @@ uint32_t filesize(char *filepath) {
 {
   NSLog(@"START");
   
-  //[self testSmallInMem];
+  [self testSmallInMem];
   
-  //[self testHalfGig];
+  [self testHalfGig];
 
   [self testTwoSixFiftyInTwoBlocks];
   
-  //[self testOneGigFailTooBig];
+  [self testOneGigFailTooBig];
   
   NSLog(@"DONE");
   
