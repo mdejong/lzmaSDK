@@ -324,7 +324,7 @@ uint32_t filesize(char *filepath) {
 
   [self testTwoSixFiftyInTwoBlocks];
   
-  [self testOneGigFailTooBig];
+  //[self testOneGigFailTooBig];
   
   NSLog(@"DONE");
   
