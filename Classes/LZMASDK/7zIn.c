@@ -1502,7 +1502,7 @@ SzArEx_DictCache_mmap(SzArEx_DictCache *dictCache)
     // Need to actually write a byte in order for the file
     // to be extended to this length.
     char oneByte = 0;
-    int writeResult = fwrite(&oneByte, 1, 1, mapfile);
+    int writeResult = (int)fwrite(&oneByte, 1, 1, mapfile);
     assert(writeResult == 1);
     
     fflush(mapfile);
@@ -1525,7 +1525,7 @@ SzArEx_DictCache_mmap(SzArEx_DictCache *dictCache)
     char page[SM_PAGESIZE];
     bzero(page, SM_PAGESIZE);
     for (int pageIndex = 0; pageIndex < (mapSize / SM_PAGESIZE); pageIndex++) {
-      int writeNum = fwrite(page, 1, SM_PAGESIZE, mapfile);
+      int writeNum = (int)fwrite(page, 1, SM_PAGESIZE, mapfile);
       assert(writeNum == SM_PAGESIZE);
     }
   }
