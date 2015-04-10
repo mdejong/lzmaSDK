@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19A172D14FA868A7028B08E0 /* LZMAExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A1731C70496F3C87C6A941 /* LZMAExtractor.m */; };
+		19A175E5B179C440FA449AFE /* LZMAExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A17F9E8F1847E8C127F288 /* LZMAExtractor.swift */; };
+		19A17BD1A2B73E37BF3B2282 /* LZMAExtractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 19A175AED8121722DEEA9C78 /* LZMAExtractor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		19A17E000020EDC129BE8429 /* LZMAExtractotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A170AFC904EAA605306CAE /* LZMAExtractotTests.swift */; };
 		3DD888211AD7ED700000458F /* lzmaSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD888161AD7ED700000458F /* lzmaSDK.framework */; };
-		3DD888281AD7ED700000458F /* lzmaTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD888271AD7ED700000458F /* lzmaTests.m */; };
-		3DD888301AD7EE170000458F /* LZMAExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = CD33A5E911EBD12800A4B114 /* LZMAExtractor.m */; };
+		3DD888281AD7ED700000458F /* LZMAExtractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD888271AD7ED700000458F /* LZMAExtractorTests.m */; };
 		3DD888321AD7EE170000458F /* CpuArch.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875AA211EBBAC7004A1640 /* CpuArch.c */; };
 		3DD888341AD7EE170000458F /* Ppmd7.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A2011EBB689004A1640 /* Ppmd7.c */; };
 		3DD888361AD7EE170000458F /* Ppmd7Dec.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A2211EBB689004A1640 /* Ppmd7Dec.c */; };
@@ -27,7 +30,6 @@
 		3DD8884D1AD7EE170000458F /* LzmaDec.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A0711EBB67C004A1640 /* LzmaDec.c */; };
 		3DD888511AD7EFBD0000458F /* 7zMain.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875B1211EBC037004A1640 /* 7zMain.c */; };
 		3DD888521AD7EFEF0000458F /* 7zAlloc.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875B1011EBC037004A1640 /* 7zAlloc.c */; };
-		3DD888531AD7F1CB0000458F /* LZMAExtractor.h in Headers */ = {isa = PBXBuildFile; fileRef = CD33A5E811EBD12800A4B114 /* LZMAExtractor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3DD888541AD7F3D40000458F /* test.7z in Resources */ = {isa = PBXBuildFile; fileRef = CD33A57F11EBCF6300A4B114 /* test.7z */; };
 		3DD888551AD7F3D40000458F /* halfgig.7z in Resources */ = {isa = PBXBuildFile; fileRef = CD968D3316AE04200003BCBB /* halfgig.7z */; };
 		3DD888561AD7F3D40000458F /* onegig.7z in Resources */ = {isa = PBXBuildFile; fileRef = CD4488B116ADF6100022E1AA /* onegig.7z */; };
@@ -45,17 +47,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19A170AFC904EAA605306CAE /* LZMAExtractotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZMAExtractotTests.swift; sourceTree = "<group>"; };
+		19A1731C70496F3C87C6A941 /* LZMAExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LZMAExtractor.m; path = Wrapper/ObjC/LZMAExtractor.m; sourceTree = "<group>"; };
+		19A17445828D1C1928638E4B /* lzmaSDK-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "lzmaSDK-Bridging-Header.h"; path = "Wrapper/Swift/lzmaSDK-Bridging-Header.h"; sourceTree = "<group>"; };
+		19A175AED8121722DEEA9C78 /* LZMAExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LZMAExtractor.h; path = Wrapper/ObjC/LZMAExtractor.h; sourceTree = "<group>"; };
+		19A17F9E8F1847E8C127F288 /* LZMAExtractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LZMAExtractor.swift; path = Wrapper/Swift/LZMAExtractor.swift; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3DD888161AD7ED700000458F /* lzmaSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = lzmaSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD888201AD7ED700000458F /* lzmaSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lzmaSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DD888261AD7ED700000458F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
-		3DD888271AD7ED700000458F /* lzmaTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lzmaTests.m; sourceTree = "<group>"; };
+		3DD888271AD7ED700000458F /* LZMAExtractorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LZMAExtractorTests.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* lzmaSDK-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "lzmaSDK-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		CD33A57F11EBCF6300A4B114 /* test.7z */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.7z; sourceTree = "<group>"; };
-		CD33A5E811EBD12800A4B114 /* LZMAExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZMAExtractor.h; sourceTree = "<group>"; };
-		CD33A5E911EBD12800A4B114 /* LZMAExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZMAExtractor.m; sourceTree = "<group>"; };
 		CD4488B116ADF6100022E1AA /* onegig.7z */ = {isa = PBXFileReference; lastKnownFileType = file; path = onegig.7z; sourceTree = "<group>"; };
 		CD8759EC11EBB67C004A1640 /* 7z.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 7z.h; sourceTree = "<group>"; };
 		CD8759ED11EBB67C004A1640 /* 7zBuf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 7zBuf.c; sourceTree = "<group>"; };
@@ -117,6 +122,10 @@
 			isa = PBXGroup;
 			children = (
 				CD9C907910C4925900FAD63F /* LZMASDK */,
+				19A1731C70496F3C87C6A941 /* LZMAExtractor.m */,
+				19A175AED8121722DEEA9C78 /* LZMAExtractor.h */,
+				19A17F9E8F1847E8C127F288 /* LZMAExtractor.swift */,
+				19A17445828D1C1928638E4B /* lzmaSDK-Bridging-Header.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -167,8 +176,9 @@
 		3DD888241AD7ED700000458F /* lzmaSDKTests */ = {
 			isa = PBXGroup;
 			children = (
-				3DD888271AD7ED700000458F /* lzmaTests.m */,
+				3DD888271AD7ED700000458F /* LZMAExtractorTests.m */,
 				3DD888251AD7ED700000458F /* Supporting Files */,
+				19A170AFC904EAA605306CAE /* LZMAExtractotTests.swift */,
 			);
 			path = lzmaSDKTests;
 			sourceTree = "<group>";
@@ -202,8 +212,6 @@
 		CD9C907910C4925900FAD63F /* LZMASDK */ = {
 			isa = PBXGroup;
 			children = (
-				CD33A5E811EBD12800A4B114 /* LZMAExtractor.h */,
-				CD33A5E911EBD12800A4B114 /* LZMAExtractor.m */,
 				CD875B0E11EBC037004A1640 /* Util */,
 				CD875AA311EBBAC7004A1640 /* CpuArch.h */,
 				CD875AA211EBBAC7004A1640 /* CpuArch.c */,
@@ -246,7 +254,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DD888531AD7F1CB0000458F /* LZMAExtractor.h in Headers */,
+				19A17BD1A2B73E37BF3B2282 /* LZMAExtractor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +361,6 @@
 			files = (
 				3DD888521AD7EFEF0000458F /* 7zAlloc.c in Sources */,
 				3DD888511AD7EFBD0000458F /* 7zMain.c in Sources */,
-				3DD888301AD7EE170000458F /* LZMAExtractor.m in Sources */,
 				3DD888321AD7EE170000458F /* CpuArch.c in Sources */,
 				3DD888341AD7EE170000458F /* Ppmd7.c in Sources */,
 				3DD888361AD7EE170000458F /* Ppmd7Dec.c in Sources */,
@@ -369,6 +376,8 @@
 				3DD888481AD7EE170000458F /* Delta.c in Sources */,
 				3DD8884B1AD7EE170000458F /* Lzma2Dec.c in Sources */,
 				3DD8884D1AD7EE170000458F /* LzmaDec.c in Sources */,
+				19A172D14FA868A7028B08E0 /* LZMAExtractor.m in Sources */,
+				19A175E5B179C440FA449AFE /* LZMAExtractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,7 +385,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DD888281AD7ED700000458F /* lzmaTests.m in Sources */,
+				3DD888281AD7ED700000458F /* LZMAExtractorTests.m in Sources */,
+				19A17E000020EDC129BE8429 /* LZMAExtractotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,6 +447,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Classes/Wrapper/Swift/lzmaSDK-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -482,6 +493,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Classes/Wrapper/Swift/lzmaSDK-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
