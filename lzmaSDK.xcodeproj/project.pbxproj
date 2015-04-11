@@ -34,6 +34,7 @@
 		3DD888551AD7F3D40000458F /* halfgig.7z in Resources */ = {isa = PBXBuildFile; fileRef = CD968D3316AE04200003BCBB /* halfgig.7z */; };
 		3DD888561AD7F3D40000458F /* onegig.7z in Resources */ = {isa = PBXBuildFile; fileRef = CD4488B116ADF6100022E1AA /* onegig.7z */; };
 		3DD888571AD7F3D40000458F /* sixfiftymeg_2blocks.7z in Resources */ = {isa = PBXBuildFile; fileRef = CDCCBE4816AE0EA70007BB70 /* sixfiftymeg_2blocks.7z */; };
+		3DE330341AD92C090006DD4E /* lzmaSDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3DD888161AD7ED700000458F /* lzmaSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,19 @@
 			remoteInfo = lzma;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3DE330331AD92BE50006DD4E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3DE330341AD92C090006DD4E /* lzmaSDK.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		19A170AFC904EAA605306CAE /* LZMAExtractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZMAExtractorTests.swift; sourceTree = "<group>"; };
@@ -286,6 +300,7 @@
 				3DD8881C1AD7ED700000458F /* Sources */,
 				3DD8881D1AD7ED700000458F /* Frameworks */,
 				3DD8881E1AD7ED700000458F /* Resources */,
+				3DE330331AD92BE50006DD4E /* CopyFiles */,
 			);
 			buildRules = (
 			);
