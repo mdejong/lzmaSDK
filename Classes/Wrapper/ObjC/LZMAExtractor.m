@@ -12,42 +12,6 @@ int do7z_extract_entry(char *archivePath, char *archiveCachePath, char *entryNam
 
 @implementation LZMAExtractor
 
-// Return a fully qualified random filename in the tmp dir. The filename is based on the
-// exact time offset since 1970 so it should be unique.
-
-+ (NSString*) generateUniqueTmpCachePath
-{
-  NSString *tmpDir = NSTemporaryDirectory();
-  
-  NSDate *nowDate = [NSDate date];
-  NSTimeInterval ti = [nowDate timeIntervalSinceReferenceDate];
-  
-  // Format number of seconds as a string with a decimal separator
-  NSString *doubleString = [NSString stringWithFormat:@"%f", ti];
-  
-  // Remove the decimal point so that the file name consists of
-  // numeric characters only.
-  
-  NSRange range;
-  range = NSMakeRange(0, [doubleString length]);
-  NSString *noDecimalString = [doubleString stringByReplacingOccurrencesOfString:@"."
-                                                                      withString:@""
-                                                                         options:0
-                                                                           range:range];
-  
-  range = NSMakeRange(0, [noDecimalString length]);
-  NSString *noMinusString = [noDecimalString stringByReplacingOccurrencesOfString:@"-"
-                                                                      withString:@""
-                                                                         options:0
-                                                                           range:range];
-
-  NSString *filename = [NSString stringWithFormat:@"%@%@", noMinusString, @".cache"];
-  
-  NSString *tmpPath = [tmpDir stringByAppendingPathComponent:filename];
-  
-  return tmpPath;
-}
-
 // Recurse into directories to determine the full paths of elements extracted
 // from a archive.
 
@@ -126,15 +90,12 @@ int do7z_extract_entry(char *archivePath, char *archiveCachePath, char *entryNam
   
   worked = [[NSFileManager defaultManager] changeCurrentDirectoryPath:myTmpDir];
   NSAssert(worked, @"cd to tmp 7z dir failed");
-  
-  char *archivePathPtr = (char*) [archivePath UTF8String];
-  NSString *archiveCachePath = [self generateUniqueTmpCachePath];
-  char *archiveCachePathPtr = (char*) [archiveCachePath UTF8String];
-  char *entryNamePtr = NULL; // Extract all entries by passing NULL
-  char *entryPathPtr = NULL;
-  
-  int result = do7z_extract_entry(archivePathPtr, archiveCachePathPtr, entryNamePtr, entryPathPtr, preserveDir ? 1 : 0);
-  NSAssert(result == 0, @"could not extract files from 7z archive");
+
+  BOOL result = [self doExtract7zArchive:archivePath
+                          archiveEntry:nil
+                               outPath:nil
+                           preserveDir:preserveDir];
+  NSAssert(result, @"could not extract files from 7z archive");
   
   // Examine the contents of the current directory to see what was extracted
   
@@ -165,18 +126,32 @@ int do7z_extract_entry(char *archivePath, char *archiveCachePath, char *entryNam
                 archiveEntry:(NSString*)archiveEntry
                      outPath:(NSString*)outPath
 {
-  NSAssert(archivePath, @"archivePath");
-  NSAssert(archiveEntry, @"archiveEntry");
-  NSAssert(outPath, @"outPath");
-  
-  char *archivePathPtr = (char*) [archivePath UTF8String];
-  NSString *archiveCachePath = [self generateUniqueTmpCachePath];
-  char *archiveCachePathPtr = (char*) [archiveCachePath UTF8String];
-  char *archiveEntryPtr = (char*) [archiveEntry UTF8String];
-  char *outPathPtr = (char*) [outPath UTF8String];
-    
-  int result = do7z_extract_entry(archivePathPtr, archiveCachePathPtr, archiveEntryPtr, outPathPtr, 0);
-  return (result == 0);
+    NSAssert(archiveEntry, @"archiveEntry");
+    NSAssert(outPath, @"outPath");
+    return [self doExtract7zArchive:archivePath
+                     archiveEntry:archiveEntry
+                          outPath:outPath
+                      preserveDir:NO];
+}
+
++ (BOOL)doExtract7zArchive:(NSString *)archivePath
+            archiveEntry:(NSString *)archiveEntry
+                 outPath:(NSString *)outPath
+             preserveDir:(BOOL)preserveDir
+{
+    NSAssert(archivePath, @"archivePath");
+    char *archivePathCStr = (char*) [archivePath UTF8String];
+    char *entryNameCStr = archiveEntry ? (char*) [archiveEntry UTF8String] : NULL;
+    char *entryPathCStr = outPath ? (char*) [outPath UTF8String] : NULL;
+    int result = do7z_extract_entry(archivePathCStr, [self archiveCacheDir], entryNameCStr, entryPathCStr, preserveDir ? 1 : 0);
+    return result == 0;
+}
+
++(char *)archiveCacheDir
+{
+    char *template = (char*) [[NSTemporaryDirectory()
+            stringByAppendingPathComponent:@"lzmaSDK.archiveCache.XXXXXXXXX"] UTF8String];
+    return mktemp(template);
 }
 
 @end
