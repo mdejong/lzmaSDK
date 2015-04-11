@@ -10,7 +10,7 @@
 		19A172D14FA868A7028B08E0 /* LZMAExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A1731C70496F3C87C6A941 /* LZMAExtractor.m */; };
 		19A175E5B179C440FA449AFE /* LZMAExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A17F9E8F1847E8C127F288 /* LZMAExtractor.swift */; };
 		19A17BD1A2B73E37BF3B2282 /* LZMAExtractor.h in Headers */ = {isa = PBXBuildFile; fileRef = 19A175AED8121722DEEA9C78 /* LZMAExtractor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		19A17E000020EDC129BE8429 /* LZMAExtractotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A170AFC904EAA605306CAE /* LZMAExtractotTests.swift */; };
+		19A17E000020EDC129BE8429 /* LZMAExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A170AFC904EAA605306CAE /* LZMAExtractorTests.swift */; };
 		3DD888211AD7ED700000458F /* lzmaSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DD888161AD7ED700000458F /* lzmaSDK.framework */; };
 		3DD888281AD7ED700000458F /* LZMAExtractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD888271AD7ED700000458F /* LZMAExtractorTests.m */; };
 		3DD888321AD7EE170000458F /* CpuArch.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875AA211EBBAC7004A1640 /* CpuArch.c */; };
@@ -47,7 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		19A170AFC904EAA605306CAE /* LZMAExtractotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZMAExtractotTests.swift; sourceTree = "<group>"; };
+		19A170AFC904EAA605306CAE /* LZMAExtractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LZMAExtractorTests.swift; sourceTree = "<group>"; };
 		19A1731C70496F3C87C6A941 /* LZMAExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LZMAExtractor.m; path = Wrapper/ObjC/LZMAExtractor.m; sourceTree = "<group>"; };
 		19A17445828D1C1928638E4B /* lzmaSDK-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "lzmaSDK-Bridging-Header.h"; path = "Wrapper/Swift/lzmaSDK-Bridging-Header.h"; sourceTree = "<group>"; };
 		19A175AED8121722DEEA9C78 /* LZMAExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LZMAExtractor.h; path = Wrapper/ObjC/LZMAExtractor.h; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 			children = (
 				3DD888271AD7ED700000458F /* LZMAExtractorTests.m */,
 				3DD888251AD7ED700000458F /* Supporting Files */,
-				19A170AFC904EAA605306CAE /* LZMAExtractotTests.swift */,
+				19A170AFC904EAA605306CAE /* LZMAExtractorTests.swift */,
 			);
 			path = lzmaSDKTests;
 			sourceTree = "<group>";
@@ -386,7 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DD888281AD7ED700000458F /* LZMAExtractorTests.m in Sources */,
-				19A17E000020EDC129BE8429 /* LZMAExtractotTests.swift in Sources */,
+				19A17E000020EDC129BE8429 /* LZMAExtractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
