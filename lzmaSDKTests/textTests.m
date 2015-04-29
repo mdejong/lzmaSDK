@@ -1,6 +1,6 @@
 //
-//  textTests.m
-//  textTests
+//  lzmaSDKTests.m
+//  lzmaSDKTests
 //
 //  Created by sunyanguo on 15/4/29.
 //  Copyright (c) 2015年 sunyanguo. All rights reserved.
