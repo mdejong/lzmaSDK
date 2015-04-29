@@ -7,560 +7,573 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D3623260D0F684500981E51 /* lzmaSDKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* lzmaSDKAppDelegate.m */; };
-		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
-		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
-		59F5342D16CEE92E004216E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
-		59F5343816CEE945004216E8 /* LZMAExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = CD33A5E911EBD12800A4B114 /* LZMAExtractor.m */; };
-		59F5343916CEE95A004216E8 /* 7zAlloc.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875B1011EBC037004A1640 /* 7zAlloc.c */; };
-		59F5343A16CEE95A004216E8 /* 7zMain.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875B1211EBC037004A1640 /* 7zMain.c */; };
-		59F5343B16CEE95A004216E8 /* CpuArch.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875AA211EBBAC7004A1640 /* CpuArch.c */; };
-		59F5343C16CEE95A004216E8 /* Ppmd7.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A2011EBB689004A1640 /* Ppmd7.c */; };
-		59F5343D16CEE95A004216E8 /* Ppmd7Dec.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A2211EBB689004A1640 /* Ppmd7Dec.c */; };
-		59F5343E16CEE95A004216E8 /* Ppmd8.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A2311EBB689004A1640 /* Ppmd8.c */; };
-		59F5343F16CEE95A004216E8 /* Ppmd8Dec.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A2511EBB689004A1640 /* Ppmd8Dec.c */; };
-		59F5344016CEE95A004216E8 /* 7zIn.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759F611EBB67C004A1640 /* 7zIn.c */; };
-		59F5344116CEE95A004216E8 /* 7zBuf.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759ED11EBB67C004A1640 /* 7zBuf.c */; };
-		59F5344216CEE95A004216E8 /* 7zBuf2.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759EF11EBB67C004A1640 /* 7zBuf2.c */; };
-		59F5344316CEE95A004216E8 /* 7zDec.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759F311EBB67C004A1640 /* 7zDec.c */; };
-		59F5344416CEE95A004216E8 /* 7zFile.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759F411EBB67C004A1640 /* 7zFile.c */; };
-		59F5344516CEE95A004216E8 /* 7zStream.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759F711EBB67C004A1640 /* 7zStream.c */; };
-		59F5344616CEE95A004216E8 /* Alloc.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759F911EBB67C004A1640 /* Alloc.c */; };
-		59F5344716CEE95A004216E8 /* Delta.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759FD11EBB67C004A1640 /* Delta.c */; };
-		59F5344816CEE95A004216E8 /* Lzma2Dec.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A0011EBB67C004A1640 /* Lzma2Dec.c */; };
-		59F5344916CEE95A004216E8 /* LzmaDec.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A0711EBB67C004A1640 /* LzmaDec.c */; };
-		CD33A58011EBCF6300A4B114 /* test.7z in Resources */ = {isa = PBXBuildFile; fileRef = CD33A57F11EBCF6300A4B114 /* test.7z */; };
-		CD33A5EA11EBD12800A4B114 /* LZMAExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = CD33A5E911EBD12800A4B114 /* LZMAExtractor.m */; };
-		CD4488B216ADF6100022E1AA /* onegig.7z in Resources */ = {isa = PBXBuildFile; fileRef = CD4488B116ADF6100022E1AA /* onegig.7z */; };
-		CD875A0D11EBB67C004A1640 /* 7zBuf.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759ED11EBB67C004A1640 /* 7zBuf.c */; };
-		CD875A0E11EBB67C004A1640 /* 7zBuf2.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759EF11EBB67C004A1640 /* 7zBuf2.c */; };
-		CD875A1111EBB67C004A1640 /* 7zDec.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759F311EBB67C004A1640 /* 7zDec.c */; };
-		CD875A1211EBB67C004A1640 /* 7zFile.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759F411EBB67C004A1640 /* 7zFile.c */; };
-		CD875A1311EBB67C004A1640 /* 7zIn.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759F611EBB67C004A1640 /* 7zIn.c */; };
-		CD875A1411EBB67C004A1640 /* 7zStream.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759F711EBB67C004A1640 /* 7zStream.c */; };
-		CD875A1511EBB67C004A1640 /* Alloc.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759F911EBB67C004A1640 /* Alloc.c */; };
-		CD875A1711EBB67C004A1640 /* Delta.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759FD11EBB67C004A1640 /* Delta.c */; };
-		CD875A1811EBB67C004A1640 /* Lzma2Dec.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A0011EBB67C004A1640 /* Lzma2Dec.c */; };
-		CD875A1C11EBB67C004A1640 /* LzmaDec.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A0711EBB67C004A1640 /* LzmaDec.c */; };
-		CD875A2911EBB689004A1640 /* Ppmd7.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A2011EBB689004A1640 /* Ppmd7.c */; };
-		CD875A2A11EBB689004A1640 /* Ppmd7Dec.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A2211EBB689004A1640 /* Ppmd7Dec.c */; };
-		CD875A2B11EBB689004A1640 /* Ppmd8.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A2311EBB689004A1640 /* Ppmd8.c */; };
-		CD875A2C11EBB689004A1640 /* Ppmd8Dec.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A2511EBB689004A1640 /* Ppmd8Dec.c */; };
-		CD875AA411EBBAC7004A1640 /* CpuArch.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875AA211EBBAC7004A1640 /* CpuArch.c */; };
-		CD875B1311EBC037004A1640 /* 7zAlloc.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875B1011EBC037004A1640 /* 7zAlloc.c */; };
-		CD875B1411EBC037004A1640 /* 7zMain.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875B1211EBC037004A1640 /* 7zMain.c */; };
-		CD968D3416AE04200003BCBB /* halfgig.7z in Resources */ = {isa = PBXBuildFile; fileRef = CD968D3316AE04200003BCBB /* halfgig.7z */; };
-		CDCCBE4916AE0EA70007BB70 /* sixfiftymeg_2blocks.7z in Resources */ = {isa = PBXBuildFile; fileRef = CDCCBE4816AE0EA70007BB70 /* sixfiftymeg_2blocks.7z */; };
+		9DB3C9231AF07C91003989D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C9221AF07C91003989D8 /* main.m */; };
+		9DB3C93D1AF07C92003989D8 /* textTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C93C1AF07C92003989D8 /* textTests.m */; };
+		9DB3C96E1AF07E35003989D8 /* 7zBuf.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C94A1AF07E35003989D8 /* 7zBuf.c */; };
+		9DB3C96F1AF07E35003989D8 /* 7zBuf2.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C94C1AF07E35003989D8 /* 7zBuf2.c */; };
+		9DB3C9701AF07E35003989D8 /* 7zDec.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C94D1AF07E35003989D8 /* 7zDec.c */; };
+		9DB3C9711AF07E35003989D8 /* 7zFile.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C94E1AF07E35003989D8 /* 7zFile.c */; };
+		9DB3C9721AF07E35003989D8 /* 7zIn.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C9501AF07E35003989D8 /* 7zIn.c */; };
+		9DB3C9731AF07E35003989D8 /* 7zStream.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C9511AF07E35003989D8 /* 7zStream.c */; };
+		9DB3C9741AF07E35003989D8 /* Alloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C9531AF07E35003989D8 /* Alloc.c */; };
+		9DB3C9751AF07E35003989D8 /* CpuArch.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C9551AF07E35003989D8 /* CpuArch.c */; };
+		9DB3C9761AF07E35003989D8 /* Delta.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C9571AF07E35003989D8 /* Delta.c */; };
+		9DB3C9771AF07E35003989D8 /* Lzma2Dec.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C95A1AF07E35003989D8 /* Lzma2Dec.c */; };
+		9DB3C9781AF07E35003989D8 /* LzmaDec.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C95C1AF07E35003989D8 /* LzmaDec.c */; };
+		9DB3C9791AF07E35003989D8 /* LZMAExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C95F1AF07E35003989D8 /* LZMAExtractor.m */; };
+		9DB3C97A1AF07E35003989D8 /* Ppmd7.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C9611AF07E35003989D8 /* Ppmd7.c */; };
+		9DB3C97B1AF07E35003989D8 /* Ppmd7Dec.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C9631AF07E35003989D8 /* Ppmd7Dec.c */; };
+		9DB3C97C1AF07E35003989D8 /* Ppmd8.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C9641AF07E35003989D8 /* Ppmd8.c */; };
+		9DB3C97D1AF07E35003989D8 /* Ppmd8Dec.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C9661AF07E35003989D8 /* Ppmd8Dec.c */; };
+		9DB3C97E1AF07E35003989D8 /* 7zAlloc.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C96B1AF07E35003989D8 /* 7zAlloc.c */; };
+		9DB3C97F1AF07E35003989D8 /* 7zMain.c in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C96D1AF07E35003989D8 /* 7zMain.c */; };
+		9DB3C98A1AF08270003989D8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C9891AF08270003989D8 /* AppDelegate.m */; };
+		9DB3C9921AF08283003989D8 /* halfgig.7z in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3C98B1AF08283003989D8 /* halfgig.7z */; };
+		9DB3C9931AF08283003989D8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3C98C1AF08283003989D8 /* Images.xcassets */; };
+		9DB3C9941AF08283003989D8 /* onegig.7z in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3C98D1AF08283003989D8 /* onegig.7z */; };
+		9DB3C9951AF08283003989D8 /* sixfiftymeg_2blocks.7z in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3C98E1AF08283003989D8 /* sixfiftymeg_2blocks.7z */; };
+		9DB3C9961AF08283003989D8 /* test.7z in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3C98F1AF08283003989D8 /* test.7z */; };
+		9DB3C9971AF08283003989D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB3C9911AF08283003989D8 /* ViewController.m */; };
+		9DB3C99C1AF08318003989D8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3C9981AF08318003989D8 /* LaunchScreen.xib */; };
+		9DB3C99D1AF08318003989D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DB3C99A1AF08318003989D8 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		59F5342A16CEE92E004216E8 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/${PRODUCT_NAME}";
-			dstSubfolderSpec = 16;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
+/* Begin PBXContainerItemProxy section */
+		9DB3C9371AF07C91003989D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DB3C9151AF07C91003989D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DB3C91C1AF07C91003989D8;
+			remoteInfo = text;
 		};
-/* End PBXCopyFilesBuildPhase section */
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1D3623240D0F684500981E51 /* lzmaSDKAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzmaSDKAppDelegate.h; sourceTree = "<group>"; };
-		1D3623250D0F684500981E51 /* lzmaSDKAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lzmaSDKAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* lzmaSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lzmaSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		32CA4F630368D1EE00C91783 /* lzmaSDK_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzmaSDK_Prefix.pch; sourceTree = "<group>"; };
-		59F5342C16CEE92E004216E8 /* liblzmaSDK-ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "liblzmaSDK-ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D1107310486CEB800E47090 /* lzmaSDK-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "lzmaSDK-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		CD33A57F11EBCF6300A4B114 /* test.7z */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.7z; sourceTree = "<group>"; };
-		CD33A5E811EBD12800A4B114 /* LZMAExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZMAExtractor.h; sourceTree = "<group>"; };
-		CD33A5E911EBD12800A4B114 /* LZMAExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZMAExtractor.m; sourceTree = "<group>"; };
-		CD4488B116ADF6100022E1AA /* onegig.7z */ = {isa = PBXFileReference; lastKnownFileType = file; path = onegig.7z; sourceTree = "<group>"; };
-		CD8759EC11EBB67C004A1640 /* 7z.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 7z.h; sourceTree = "<group>"; };
-		CD8759ED11EBB67C004A1640 /* 7zBuf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 7zBuf.c; sourceTree = "<group>"; };
-		CD8759EE11EBB67C004A1640 /* 7zBuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 7zBuf.h; sourceTree = "<group>"; };
-		CD8759EF11EBB67C004A1640 /* 7zBuf2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 7zBuf2.c; sourceTree = "<group>"; };
-		CD8759F311EBB67C004A1640 /* 7zDec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 7zDec.c; sourceTree = "<group>"; };
-		CD8759F411EBB67C004A1640 /* 7zFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 7zFile.c; sourceTree = "<group>"; };
-		CD8759F511EBB67C004A1640 /* 7zFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 7zFile.h; sourceTree = "<group>"; };
-		CD8759F611EBB67C004A1640 /* 7zIn.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 7zIn.c; sourceTree = "<group>"; };
-		CD8759F711EBB67C004A1640 /* 7zStream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 7zStream.c; sourceTree = "<group>"; };
-		CD8759F811EBB67C004A1640 /* 7zVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 7zVersion.h; sourceTree = "<group>"; };
-		CD8759F911EBB67C004A1640 /* Alloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Alloc.c; sourceTree = "<group>"; };
-		CD8759FA11EBB67C004A1640 /* Alloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alloc.h; sourceTree = "<group>"; };
-		CD8759FD11EBB67C004A1640 /* Delta.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Delta.c; sourceTree = "<group>"; };
-		CD8759FE11EBB67C004A1640 /* Delta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Delta.h; sourceTree = "<group>"; };
-		CD8759FF11EBB67C004A1640 /* LzHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LzHash.h; sourceTree = "<group>"; };
-		CD875A0011EBB67C004A1640 /* Lzma2Dec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Lzma2Dec.c; sourceTree = "<group>"; };
-		CD875A0111EBB67C004A1640 /* Lzma2Dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lzma2Dec.h; sourceTree = "<group>"; };
-		CD875A0711EBB67C004A1640 /* LzmaDec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LzmaDec.c; sourceTree = "<group>"; };
-		CD875A0811EBB67C004A1640 /* LzmaDec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LzmaDec.h; sourceTree = "<group>"; };
-		CD875A1F11EBB689004A1640 /* Ppmd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ppmd.h; sourceTree = "<group>"; };
-		CD875A2011EBB689004A1640 /* Ppmd7.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Ppmd7.c; sourceTree = "<group>"; };
-		CD875A2111EBB689004A1640 /* Ppmd7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ppmd7.h; sourceTree = "<group>"; };
-		CD875A2211EBB689004A1640 /* Ppmd7Dec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Ppmd7Dec.c; sourceTree = "<group>"; };
-		CD875A2311EBB689004A1640 /* Ppmd8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Ppmd8.c; sourceTree = "<group>"; };
-		CD875A2411EBB689004A1640 /* Ppmd8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ppmd8.h; sourceTree = "<group>"; };
-		CD875A2511EBB689004A1640 /* Ppmd8Dec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Ppmd8Dec.c; sourceTree = "<group>"; };
-		CD875A2711EBB689004A1640 /* RotateDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotateDefs.h; sourceTree = "<group>"; };
-		CD875A2811EBB689004A1640 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
-		CD875AA211EBBAC7004A1640 /* CpuArch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CpuArch.c; sourceTree = "<group>"; };
-		CD875AA311EBBAC7004A1640 /* CpuArch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CpuArch.h; sourceTree = "<group>"; };
-		CD875B1011EBC037004A1640 /* 7zAlloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 7zAlloc.c; sourceTree = "<group>"; };
-		CD875B1111EBC037004A1640 /* 7zAlloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 7zAlloc.h; sourceTree = "<group>"; };
-		CD875B1211EBC037004A1640 /* 7zMain.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 7zMain.c; sourceTree = "<group>"; };
-		CD968D3316AE04200003BCBB /* halfgig.7z */ = {isa = PBXFileReference; lastKnownFileType = file; path = halfgig.7z; sourceTree = "<group>"; };
-		CDCCBE4816AE0EA70007BB70 /* sixfiftymeg_2blocks.7z */ = {isa = PBXFileReference; lastKnownFileType = file; path = sixfiftymeg_2blocks.7z; sourceTree = "<group>"; };
-		CDE1AE5D16D1E20300782249 /* lzmaSDK-ios-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "lzmaSDK-ios-Prefix.pch"; sourceTree = "<group>"; };
+		9DB3C91D1AF07C91003989D8 /* lzmaSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lzmaSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DB3C9211AF07C91003989D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DB3C9221AF07C91003989D8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9DB3C9361AF07C91003989D8 /* lzmaSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lzmaSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DB3C93B1AF07C91003989D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9DB3C93C1AF07C92003989D8 /* textTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = textTests.m; sourceTree = "<group>"; };
+		9DB3C9491AF07E35003989D8 /* 7z.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 7z.h; sourceTree = "<group>"; };
+		9DB3C94A1AF07E35003989D8 /* 7zBuf.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 7zBuf.c; sourceTree = "<group>"; };
+		9DB3C94B1AF07E35003989D8 /* 7zBuf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 7zBuf.h; sourceTree = "<group>"; };
+		9DB3C94C1AF07E35003989D8 /* 7zBuf2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 7zBuf2.c; sourceTree = "<group>"; };
+		9DB3C94D1AF07E35003989D8 /* 7zDec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 7zDec.c; sourceTree = "<group>"; };
+		9DB3C94E1AF07E35003989D8 /* 7zFile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 7zFile.c; sourceTree = "<group>"; };
+		9DB3C94F1AF07E35003989D8 /* 7zFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 7zFile.h; sourceTree = "<group>"; };
+		9DB3C9501AF07E35003989D8 /* 7zIn.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 7zIn.c; sourceTree = "<group>"; };
+		9DB3C9511AF07E35003989D8 /* 7zStream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 7zStream.c; sourceTree = "<group>"; };
+		9DB3C9521AF07E35003989D8 /* 7zVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 7zVersion.h; sourceTree = "<group>"; };
+		9DB3C9531AF07E35003989D8 /* Alloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Alloc.c; sourceTree = "<group>"; };
+		9DB3C9541AF07E35003989D8 /* Alloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alloc.h; sourceTree = "<group>"; };
+		9DB3C9551AF07E35003989D8 /* CpuArch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CpuArch.c; sourceTree = "<group>"; };
+		9DB3C9561AF07E35003989D8 /* CpuArch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CpuArch.h; sourceTree = "<group>"; };
+		9DB3C9571AF07E35003989D8 /* Delta.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Delta.c; sourceTree = "<group>"; };
+		9DB3C9581AF07E35003989D8 /* Delta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Delta.h; sourceTree = "<group>"; };
+		9DB3C9591AF07E35003989D8 /* LzHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LzHash.h; sourceTree = "<group>"; };
+		9DB3C95A1AF07E35003989D8 /* Lzma2Dec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Lzma2Dec.c; sourceTree = "<group>"; };
+		9DB3C95B1AF07E35003989D8 /* Lzma2Dec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lzma2Dec.h; sourceTree = "<group>"; };
+		9DB3C95C1AF07E35003989D8 /* LzmaDec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LzmaDec.c; sourceTree = "<group>"; };
+		9DB3C95D1AF07E35003989D8 /* LzmaDec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LzmaDec.h; sourceTree = "<group>"; };
+		9DB3C95E1AF07E35003989D8 /* LZMAExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZMAExtractor.h; sourceTree = "<group>"; };
+		9DB3C95F1AF07E35003989D8 /* LZMAExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZMAExtractor.m; sourceTree = "<group>"; };
+		9DB3C9601AF07E35003989D8 /* Ppmd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ppmd.h; sourceTree = "<group>"; };
+		9DB3C9611AF07E35003989D8 /* Ppmd7.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Ppmd7.c; sourceTree = "<group>"; };
+		9DB3C9621AF07E35003989D8 /* Ppmd7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ppmd7.h; sourceTree = "<group>"; };
+		9DB3C9631AF07E35003989D8 /* Ppmd7Dec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Ppmd7Dec.c; sourceTree = "<group>"; };
+		9DB3C9641AF07E35003989D8 /* Ppmd8.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Ppmd8.c; sourceTree = "<group>"; };
+		9DB3C9651AF07E35003989D8 /* Ppmd8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ppmd8.h; sourceTree = "<group>"; };
+		9DB3C9661AF07E35003989D8 /* Ppmd8Dec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Ppmd8Dec.c; sourceTree = "<group>"; };
+		9DB3C9671AF07E35003989D8 /* RotateDefs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotateDefs.h; sourceTree = "<group>"; };
+		9DB3C9681AF07E35003989D8 /* Types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Types.h; sourceTree = "<group>"; };
+		9DB3C96B1AF07E35003989D8 /* 7zAlloc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 7zAlloc.c; sourceTree = "<group>"; };
+		9DB3C96C1AF07E35003989D8 /* 7zAlloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 7zAlloc.h; sourceTree = "<group>"; };
+		9DB3C96D1AF07E35003989D8 /* 7zMain.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = 7zMain.c; sourceTree = "<group>"; };
+		9DB3C9881AF08270003989D8 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9DB3C9891AF08270003989D8 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9DB3C98B1AF08283003989D8 /* halfgig.7z */ = {isa = PBXFileReference; lastKnownFileType = file; path = halfgig.7z; sourceTree = "<group>"; };
+		9DB3C98C1AF08283003989D8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9DB3C98D1AF08283003989D8 /* onegig.7z */ = {isa = PBXFileReference; lastKnownFileType = file; path = onegig.7z; sourceTree = "<group>"; };
+		9DB3C98E1AF08283003989D8 /* sixfiftymeg_2blocks.7z */ = {isa = PBXFileReference; lastKnownFileType = file; path = sixfiftymeg_2blocks.7z; sourceTree = "<group>"; };
+		9DB3C98F1AF08283003989D8 /* test.7z */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.7z; sourceTree = "<group>"; };
+		9DB3C9901AF08283003989D8 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9DB3C9911AF08283003989D8 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9DB3C9991AF08318003989D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9DB3C99B1AF08318003989D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+		9DB3C91A1AF07C91003989D8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
-				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
-				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		59F5342916CEE92E004216E8 /* Frameworks */ = {
+		9DB3C9331AF07C91003989D8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59F5342D16CEE92E004216E8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		080E96DDFE201D6D7F000001 /* Classes */ = {
+		9DB3C9141AF07C91003989D8 = {
 			isa = PBXGroup;
 			children = (
-				CD9C907910C4925900FAD63F /* LZMASDK */,
-				1D3623240D0F684500981E51 /* lzmaSDKAppDelegate.h */,
-				1D3623250D0F684500981E51 /* lzmaSDKAppDelegate.m */,
+				9DB3C91F1AF07C91003989D8 /* lzmaSDK */,
+				9DB3C9391AF07C91003989D8 /* lzmaSDKTests */,
+				9DB3C91E1AF07C91003989D8 /* Products */,
 			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
-		19C28FACFE9D520D11CA2CBB /* Products */ = {
+		9DB3C91E1AF07C91003989D8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* lzmaSDK.app */,
-				59F5342C16CEE92E004216E8 /* liblzmaSDK-ios.a */,
+				9DB3C91D1AF07C91003989D8 /* lzmaSDK.app */,
+				9DB3C9361AF07C91003989D8 /* lzmaSDKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+		9DB3C91F1AF07C91003989D8 /* lzmaSDK */ = {
 			isa = PBXGroup;
 			children = (
-				080E96DDFE201D6D7F000001 /* Classes */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				29B97317FDCFA39411CA2CEA /* Resources */,
-				59F5342E16CEE92E004216E8 /* lib */,
-				29B97323FDCFA39411CA2CEA /* Frameworks */,
-				19C28FACFE9D520D11CA2CBB /* Products */,
+				9DB3C9881AF08270003989D8 /* AppDelegate.h */,
+				9DB3C9891AF08270003989D8 /* AppDelegate.m */,
+				9DB3C98B1AF08283003989D8 /* halfgig.7z */,
+				9DB3C98C1AF08283003989D8 /* Images.xcassets */,
+				9DB3C98D1AF08283003989D8 /* onegig.7z */,
+				9DB3C98E1AF08283003989D8 /* sixfiftymeg_2blocks.7z */,
+				9DB3C98F1AF08283003989D8 /* test.7z */,
+				9DB3C9901AF08283003989D8 /* ViewController.h */,
+				9DB3C9911AF08283003989D8 /* ViewController.m */,
+				9DB3C9981AF08318003989D8 /* LaunchScreen.xib */,
+				9DB3C99A1AF08318003989D8 /* Main.storyboard */,
+				9DB3C9481AF07E35003989D8 /* LZMASDK */,
+				9DB3C9201AF07C91003989D8 /* Supporting Files */,
 			);
-			name = CustomTemplate;
+			path = lzmaSDK;
 			sourceTree = "<group>";
 		};
-		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+		9DB3C9201AF07C91003989D8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				32CA4F630368D1EE00C91783 /* lzmaSDK_Prefix.pch */,
-				29B97316FDCFA39411CA2CEA /* main.m */,
-			);
-			name = "Other Sources";
-			sourceTree = "<group>";
-		};
-		29B97317FDCFA39411CA2CEA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				CD33A57F11EBCF6300A4B114 /* test.7z */,
-				CD968D3316AE04200003BCBB /* halfgig.7z */,
-				CD4488B116ADF6100022E1AA /* onegig.7z */,
-				CDCCBE4816AE0EA70007BB70 /* sixfiftymeg_2blocks.7z */,
-				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
-				8D1107310486CEB800E47090 /* lzmaSDK-Info.plist */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
-				1D30AB110D05D00D00671497 /* Foundation.framework */,
-				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		59F5342E16CEE92E004216E8 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				59F5342F16CEE92E004216E8 /* Supporting Files */,
-			);
-			name = lib;
-			path = "lzmaSDK-ios";
-			sourceTree = "<group>";
-		};
-		59F5342F16CEE92E004216E8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CDE1AE5D16D1E20300782249 /* lzmaSDK-ios-Prefix.pch */,
+				9DB3C9211AF07C91003989D8 /* Info.plist */,
+				9DB3C9221AF07C91003989D8 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CD875B0E11EBC037004A1640 /* Util */ = {
+		9DB3C9391AF07C91003989D8 /* lzmaSDKTests */ = {
 			isa = PBXGroup;
 			children = (
-				CD875B0F11EBC037004A1640 /* 7z */,
+				9DB3C93C1AF07C92003989D8 /* textTests.m */,
+				9DB3C93A1AF07C91003989D8 /* Supporting Files */,
+			);
+			path = lzmaSDKTests;
+			sourceTree = "<group>";
+		};
+		9DB3C93A1AF07C91003989D8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9DB3C93B1AF07C91003989D8 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9DB3C9481AF07E35003989D8 /* LZMASDK */ = {
+			isa = PBXGroup;
+			children = (
+				9DB3C9491AF07E35003989D8 /* 7z.h */,
+				9DB3C94A1AF07E35003989D8 /* 7zBuf.c */,
+				9DB3C94B1AF07E35003989D8 /* 7zBuf.h */,
+				9DB3C94C1AF07E35003989D8 /* 7zBuf2.c */,
+				9DB3C94D1AF07E35003989D8 /* 7zDec.c */,
+				9DB3C94E1AF07E35003989D8 /* 7zFile.c */,
+				9DB3C94F1AF07E35003989D8 /* 7zFile.h */,
+				9DB3C9501AF07E35003989D8 /* 7zIn.c */,
+				9DB3C9511AF07E35003989D8 /* 7zStream.c */,
+				9DB3C9521AF07E35003989D8 /* 7zVersion.h */,
+				9DB3C9531AF07E35003989D8 /* Alloc.c */,
+				9DB3C9541AF07E35003989D8 /* Alloc.h */,
+				9DB3C9551AF07E35003989D8 /* CpuArch.c */,
+				9DB3C9561AF07E35003989D8 /* CpuArch.h */,
+				9DB3C9571AF07E35003989D8 /* Delta.c */,
+				9DB3C9581AF07E35003989D8 /* Delta.h */,
+				9DB3C9591AF07E35003989D8 /* LzHash.h */,
+				9DB3C95A1AF07E35003989D8 /* Lzma2Dec.c */,
+				9DB3C95B1AF07E35003989D8 /* Lzma2Dec.h */,
+				9DB3C95C1AF07E35003989D8 /* LzmaDec.c */,
+				9DB3C95D1AF07E35003989D8 /* LzmaDec.h */,
+				9DB3C95E1AF07E35003989D8 /* LZMAExtractor.h */,
+				9DB3C95F1AF07E35003989D8 /* LZMAExtractor.m */,
+				9DB3C9601AF07E35003989D8 /* Ppmd.h */,
+				9DB3C9611AF07E35003989D8 /* Ppmd7.c */,
+				9DB3C9621AF07E35003989D8 /* Ppmd7.h */,
+				9DB3C9631AF07E35003989D8 /* Ppmd7Dec.c */,
+				9DB3C9641AF07E35003989D8 /* Ppmd8.c */,
+				9DB3C9651AF07E35003989D8 /* Ppmd8.h */,
+				9DB3C9661AF07E35003989D8 /* Ppmd8Dec.c */,
+				9DB3C9671AF07E35003989D8 /* RotateDefs.h */,
+				9DB3C9681AF07E35003989D8 /* Types.h */,
+				9DB3C9691AF07E35003989D8 /* Util */,
+			);
+			path = LZMASDK;
+			sourceTree = "<group>";
+		};
+		9DB3C9691AF07E35003989D8 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9DB3C96A1AF07E35003989D8 /* 7z */,
 			);
 			path = Util;
 			sourceTree = "<group>";
 		};
-		CD875B0F11EBC037004A1640 /* 7z */ = {
+		9DB3C96A1AF07E35003989D8 /* 7z */ = {
 			isa = PBXGroup;
 			children = (
-				CD875B1011EBC037004A1640 /* 7zAlloc.c */,
-				CD875B1111EBC037004A1640 /* 7zAlloc.h */,
-				CD875B1211EBC037004A1640 /* 7zMain.c */,
+				9DB3C96B1AF07E35003989D8 /* 7zAlloc.c */,
+				9DB3C96C1AF07E35003989D8 /* 7zAlloc.h */,
+				9DB3C96D1AF07E35003989D8 /* 7zMain.c */,
 			);
 			path = 7z;
-			sourceTree = "<group>";
-		};
-		CD9C907910C4925900FAD63F /* LZMASDK */ = {
-			isa = PBXGroup;
-			children = (
-				CD33A5E811EBD12800A4B114 /* LZMAExtractor.h */,
-				CD33A5E911EBD12800A4B114 /* LZMAExtractor.m */,
-				CD875B0E11EBC037004A1640 /* Util */,
-				CD875AA311EBBAC7004A1640 /* CpuArch.h */,
-				CD875AA211EBBAC7004A1640 /* CpuArch.c */,
-				CD875A1F11EBB689004A1640 /* Ppmd.h */,
-				CD875A2011EBB689004A1640 /* Ppmd7.c */,
-				CD875A2111EBB689004A1640 /* Ppmd7.h */,
-				CD875A2211EBB689004A1640 /* Ppmd7Dec.c */,
-				CD875A2311EBB689004A1640 /* Ppmd8.c */,
-				CD875A2411EBB689004A1640 /* Ppmd8.h */,
-				CD875A2511EBB689004A1640 /* Ppmd8Dec.c */,
-				CD875A2711EBB689004A1640 /* RotateDefs.h */,
-				CD875A2811EBB689004A1640 /* Types.h */,
-				CD8759EC11EBB67C004A1640 /* 7z.h */,
-				CD8759F611EBB67C004A1640 /* 7zIn.c */,
-				CD8759ED11EBB67C004A1640 /* 7zBuf.c */,
-				CD8759EE11EBB67C004A1640 /* 7zBuf.h */,
-				CD8759EF11EBB67C004A1640 /* 7zBuf2.c */,
-				CD8759F311EBB67C004A1640 /* 7zDec.c */,
-				CD8759F411EBB67C004A1640 /* 7zFile.c */,
-				CD8759F511EBB67C004A1640 /* 7zFile.h */,
-				CD8759F711EBB67C004A1640 /* 7zStream.c */,
-				CD8759F811EBB67C004A1640 /* 7zVersion.h */,
-				CD8759F911EBB67C004A1640 /* Alloc.c */,
-				CD8759FA11EBB67C004A1640 /* Alloc.h */,
-				CD8759FD11EBB67C004A1640 /* Delta.c */,
-				CD8759FE11EBB67C004A1640 /* Delta.h */,
-				CD8759FF11EBB67C004A1640 /* LzHash.h */,
-				CD875A0011EBB67C004A1640 /* Lzma2Dec.c */,
-				CD875A0111EBB67C004A1640 /* Lzma2Dec.h */,
-				CD875A0711EBB67C004A1640 /* LzmaDec.c */,
-				CD875A0811EBB67C004A1640 /* LzmaDec.h */,
-			);
-			path = LZMASDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* lzmaSDK */ = {
+		9DB3C91C1AF07C91003989D8 /* lzmaSDK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "lzmaSDK" */;
+			buildConfigurationList = 9DB3C9401AF07C92003989D8 /* Build configuration list for PBXNativeTarget "lzmaSDK" */;
 			buildPhases = (
-				1D60588D0D05DD3D006BFB54 /* Resources */,
-				1D60588E0D05DD3D006BFB54 /* Sources */,
-				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				9DB3C9191AF07C91003989D8 /* Sources */,
+				9DB3C91A1AF07C91003989D8 /* Frameworks */,
+				9DB3C91B1AF07C91003989D8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = lzmaSDK;
-			productName = lzmaSDK;
-			productReference = 1D6058910D05DD3D006BFB54 /* lzmaSDK.app */;
+			productName = text;
+			productReference = 9DB3C91D1AF07C91003989D8 /* lzmaSDK.app */;
 			productType = "com.apple.product-type.application";
 		};
-		59F5342B16CEE92E004216E8 /* lzmaSDK-ios */ = {
+		9DB3C9351AF07C91003989D8 /* lzmaSDKTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 59F5343716CEE92E004216E8 /* Build configuration list for PBXNativeTarget "lzmaSDK-ios" */;
+			buildConfigurationList = 9DB3C9431AF07C92003989D8 /* Build configuration list for PBXNativeTarget "lzmaSDKTests" */;
 			buildPhases = (
-				59F5342816CEE92E004216E8 /* Sources */,
-				59F5342916CEE92E004216E8 /* Frameworks */,
-				59F5342A16CEE92E004216E8 /* CopyFiles */,
+				9DB3C9321AF07C91003989D8 /* Sources */,
+				9DB3C9331AF07C91003989D8 /* Frameworks */,
+				9DB3C9341AF07C91003989D8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9DB3C9381AF07C91003989D8 /* PBXTargetDependency */,
 			);
-			name = "lzmaSDK-ios";
-			productName = "lzmaSDK-ios";
-			productReference = 59F5342C16CEE92E004216E8 /* liblzmaSDK-ios.a */;
-			productType = "com.apple.product-type.library.static";
+			name = lzmaSDKTests;
+			productName = textTests;
+			productReference = 9DB3C9361AF07C91003989D8 /* lzmaSDKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		29B97313FDCFA39411CA2CEA /* Project object */ = {
+		9DB3C9151AF07C91003989D8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = sunyanguo;
+				TargetAttributes = {
+					9DB3C91C1AF07C91003989D8 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					9DB3C9351AF07C91003989D8 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 9DB3C91C1AF07C91003989D8;
+					};
+				};
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "lzmaSDK" */;
+			buildConfigurationList = 9DB3C9181AF07C91003989D8 /* Build configuration list for PBXProject "lzmaSDK" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
-			hasScannedForEncodings = 1;
+			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
+				en,
+				Base,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			mainGroup = 9DB3C9141AF07C91003989D8;
+			productRefGroup = 9DB3C91E1AF07C91003989D8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* lzmaSDK */,
-				59F5342B16CEE92E004216E8 /* lzmaSDK-ios */,
+				9DB3C91C1AF07C91003989D8 /* lzmaSDK */,
+				9DB3C9351AF07C91003989D8 /* lzmaSDKTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+		9DB3C91B1AF07C91003989D8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
-				CD33A58011EBCF6300A4B114 /* test.7z in Resources */,
-				CD4488B216ADF6100022E1AA /* onegig.7z in Resources */,
-				CD968D3416AE04200003BCBB /* halfgig.7z in Resources */,
-				CDCCBE4916AE0EA70007BB70 /* sixfiftymeg_2blocks.7z in Resources */,
+				9DB3C99D1AF08318003989D8 /* Main.storyboard in Resources */,
+				9DB3C9961AF08283003989D8 /* test.7z in Resources */,
+				9DB3C9921AF08283003989D8 /* halfgig.7z in Resources */,
+				9DB3C9941AF08283003989D8 /* onegig.7z in Resources */,
+				9DB3C9931AF08283003989D8 /* Images.xcassets in Resources */,
+				9DB3C99C1AF08318003989D8 /* LaunchScreen.xib in Resources */,
+				9DB3C9951AF08283003989D8 /* sixfiftymeg_2blocks.7z in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9DB3C9341AF07C91003989D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+		9DB3C9191AF07C91003989D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				1D3623260D0F684500981E51 /* lzmaSDKAppDelegate.m in Sources */,
-				CD875A0D11EBB67C004A1640 /* 7zBuf.c in Sources */,
-				CD875A0E11EBB67C004A1640 /* 7zBuf2.c in Sources */,
-				CD875A1111EBB67C004A1640 /* 7zDec.c in Sources */,
-				CD875A1211EBB67C004A1640 /* 7zFile.c in Sources */,
-				CD875A1311EBB67C004A1640 /* 7zIn.c in Sources */,
-				CD875A1411EBB67C004A1640 /* 7zStream.c in Sources */,
-				CD875A1511EBB67C004A1640 /* Alloc.c in Sources */,
-				CD875A1711EBB67C004A1640 /* Delta.c in Sources */,
-				CD875A1811EBB67C004A1640 /* Lzma2Dec.c in Sources */,
-				CD875A1C11EBB67C004A1640 /* LzmaDec.c in Sources */,
-				CD875A2911EBB689004A1640 /* Ppmd7.c in Sources */,
-				CD875A2A11EBB689004A1640 /* Ppmd7Dec.c in Sources */,
-				CD875A2B11EBB689004A1640 /* Ppmd8.c in Sources */,
-				CD875A2C11EBB689004A1640 /* Ppmd8Dec.c in Sources */,
-				CD875AA411EBBAC7004A1640 /* CpuArch.c in Sources */,
-				CD875B1311EBC037004A1640 /* 7zAlloc.c in Sources */,
-				CD875B1411EBC037004A1640 /* 7zMain.c in Sources */,
-				CD33A5EA11EBD12800A4B114 /* LZMAExtractor.m in Sources */,
+				9DB3C9971AF08283003989D8 /* ViewController.m in Sources */,
+				9DB3C97A1AF07E35003989D8 /* Ppmd7.c in Sources */,
+				9DB3C97E1AF07E35003989D8 /* 7zAlloc.c in Sources */,
+				9DB3C97D1AF07E35003989D8 /* Ppmd8Dec.c in Sources */,
+				9DB3C9741AF07E35003989D8 /* Alloc.c in Sources */,
+				9DB3C98A1AF08270003989D8 /* AppDelegate.m in Sources */,
+				9DB3C9731AF07E35003989D8 /* 7zStream.c in Sources */,
+				9DB3C9791AF07E35003989D8 /* LZMAExtractor.m in Sources */,
+				9DB3C9781AF07E35003989D8 /* LzmaDec.c in Sources */,
+				9DB3C9751AF07E35003989D8 /* CpuArch.c in Sources */,
+				9DB3C96E1AF07E35003989D8 /* 7zBuf.c in Sources */,
+				9DB3C9761AF07E35003989D8 /* Delta.c in Sources */,
+				9DB3C9711AF07E35003989D8 /* 7zFile.c in Sources */,
+				9DB3C9701AF07E35003989D8 /* 7zDec.c in Sources */,
+				9DB3C9771AF07E35003989D8 /* Lzma2Dec.c in Sources */,
+				9DB3C96F1AF07E35003989D8 /* 7zBuf2.c in Sources */,
+				9DB3C9231AF07C91003989D8 /* main.m in Sources */,
+				9DB3C97C1AF07E35003989D8 /* Ppmd8.c in Sources */,
+				9DB3C9721AF07E35003989D8 /* 7zIn.c in Sources */,
+				9DB3C97F1AF07E35003989D8 /* 7zMain.c in Sources */,
+				9DB3C97B1AF07E35003989D8 /* Ppmd7Dec.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		59F5342816CEE92E004216E8 /* Sources */ = {
+		9DB3C9321AF07C91003989D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				59F5343916CEE95A004216E8 /* 7zAlloc.c in Sources */,
-				59F5343A16CEE95A004216E8 /* 7zMain.c in Sources */,
-				59F5343B16CEE95A004216E8 /* CpuArch.c in Sources */,
-				59F5343C16CEE95A004216E8 /* Ppmd7.c in Sources */,
-				59F5343D16CEE95A004216E8 /* Ppmd7Dec.c in Sources */,
-				59F5343E16CEE95A004216E8 /* Ppmd8.c in Sources */,
-				59F5343F16CEE95A004216E8 /* Ppmd8Dec.c in Sources */,
-				59F5344016CEE95A004216E8 /* 7zIn.c in Sources */,
-				59F5344116CEE95A004216E8 /* 7zBuf.c in Sources */,
-				59F5344216CEE95A004216E8 /* 7zBuf2.c in Sources */,
-				59F5344316CEE95A004216E8 /* 7zDec.c in Sources */,
-				59F5344416CEE95A004216E8 /* 7zFile.c in Sources */,
-				59F5344516CEE95A004216E8 /* 7zStream.c in Sources */,
-				59F5344616CEE95A004216E8 /* Alloc.c in Sources */,
-				59F5344716CEE95A004216E8 /* Delta.c in Sources */,
-				59F5344816CEE95A004216E8 /* Lzma2Dec.c in Sources */,
-				59F5344916CEE95A004216E8 /* LzmaDec.c in Sources */,
-				59F5343816CEE945004216E8 /* LZMAExtractor.m in Sources */,
+				9DB3C93D1AF07C92003989D8 /* textTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		9DB3C9381AF07C91003989D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9DB3C91C1AF07C91003989D8 /* lzmaSDK */;
+			targetProxy = 9DB3C9371AF07C91003989D8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9DB3C9981AF08318003989D8 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DB3C9991AF08318003989D8 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		9DB3C99A1AF08318003989D8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DB3C99B1AF08318003989D8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		1D6058940D05DD3E006BFB54 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = lzmaSDK_Prefix.pch;
-				INFOPLIST_FILE = "lzmaSDK-Info.plist";
-				PRODUCT_NAME = lzmaSDK;
-			};
-			name = Debug;
-		};
-		1D6058950D05DD3E006BFB54 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = lzmaSDK_Prefix.pch;
-				INFOPLIST_FILE = "lzmaSDK-Info.plist";
-				PRODUCT_NAME = lzmaSDK;
-			};
-			name = Release;
-		};
-		59F5343516CEE92E004216E8 /* Debug */ = {
+		9DB3C93E1AF07C92003989D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DSTROOT = /tmp/lzmaSDK_ios.dst;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "lzmaSDK-ios/lzmaSDK-ios-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
-		59F5343616CEE92E004216E8 /* Release */ = {
+		9DB3C93F1AF07C92003989D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				DSTROOT = /tmp/lzmaSDK_ios.dst;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "lzmaSDK-ios/lzmaSDK-ios-Prefix.pch";
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		C01FCF4F08A954540054247B /* Debug */ = {
+		9DB3C9411AF07C92003989D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
-				SDKROOT = iphoneos;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = lzmaSDK/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = lzmaSDK;
 			};
 			name = Debug;
 		};
-		C01FCF5008A954540054247B /* Release */ = {
+		9DB3C9421AF07C92003989D8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = c99;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.1.3;
-				SDKROOT = iphoneos;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = lzmaSDK/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = lzmaSDK;
+			};
+			name = Release;
+		};
+		9DB3C9441AF07C92003989D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = lzmaSDKTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = lzmaSDKTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lzmaSDK.app/lzmaSDK";
+			};
+			name = Debug;
+		};
+		9DB3C9451AF07C92003989D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = lzmaSDKTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = lzmaSDKTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lzmaSDK.app/lzmaSDK";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "lzmaSDK" */ = {
+		9DB3C9181AF07C91003989D8 /* Build configuration list for PBXProject "lzmaSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D6058940D05DD3E006BFB54 /* Debug */,
-				1D6058950D05DD3E006BFB54 /* Release */,
+				9DB3C93E1AF07C92003989D8 /* Debug */,
+				9DB3C93F1AF07C92003989D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		59F5343716CEE92E004216E8 /* Build configuration list for PBXNativeTarget "lzmaSDK-ios" */ = {
+		9DB3C9401AF07C92003989D8 /* Build configuration list for PBXNativeTarget "lzmaSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				59F5343516CEE92E004216E8 /* Debug */,
-				59F5343616CEE92E004216E8 /* Release */,
+				9DB3C9411AF07C92003989D8 /* Debug */,
+				9DB3C9421AF07C92003989D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "lzmaSDK" */ = {
+		9DB3C9431AF07C92003989D8 /* Build configuration list for PBXNativeTarget "lzmaSDKTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C01FCF4F08A954540054247B /* Debug */,
-				C01FCF5008A954540054247B /* Release */,
+				9DB3C9441AF07C92003989D8 /* Debug */,
+				9DB3C9451AF07C92003989D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+	rootObject = 9DB3C9151AF07C91003989D8 /* Project object */;
 }
