@@ -59,5 +59,3 @@ files can be decoded without using up all the memory in an iOS application. Prev
 an archive with a dictionary around 30 to 40 megs would crash an iOS device, with
 the mmap logic files as large as 650 megs can be decoded without going over the
 virtual memory limits on iOS.
-
-

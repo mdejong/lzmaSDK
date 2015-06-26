@@ -1508,30 +1508,30 @@ SzArEx_DictCache_mmap(SzArEx_DictCache *dictCache)
     char oneByte = 0;
     int writeResult = (int) fwrite(&oneByte, 1, 1, mapfile);
     assert(writeResult == 1);
-    
-    fflush(mapfile);
-
-    // If writing a byte did not actually work, then it seems
-    // that the device is out of space. This condition is
-    // not indicated by any of the calls above, but the
-    // ftell will not report that the end of file advanced.
-    
-    off_t fileOffsetAfterWrite = ftell(mapfile);
-    
-    if (fileOffsetAfterWrite == fileOffsetBeforeWrite) {
-      fclose(mapfile);
-      return 3;
-    }
+      
+      fflush(mapfile);
+      
+      // If writing a byte did not actually work, then it seems
+      // that the device is out of space. This condition is
+      // not indicated by any of the calls above, but the
+      // ftell will not report that the end of file advanced.
+      
+      off_t fileOffsetAfterWrite = ftell(mapfile);
+      
+      if (fileOffsetAfterWrite == fileOffsetBeforeWrite) {
+          fclose(mapfile);
+          return 3;
+      }
   } else {
-    // Instead of using seek to write a whole in the file, write
-    // empty zero pages until the file is the proper length
-    // but with nothing but zeros in it.
-    char page[SM_PAGESIZE];
-    bzero(page, SM_PAGESIZE);
-    for (int pageIndex = 0; pageIndex < (mapSize / SM_PAGESIZE); pageIndex++) {
-      int writeNum = (int)fwrite(page, 1, SM_PAGESIZE, mapfile);
-      assert(writeNum == SM_PAGESIZE);
-    }
+      // Instead of using seek to write a whole in the file, write
+      // empty zero pages until the file is the proper length
+      // but with nothing but zeros in it.
+      char page[SM_PAGESIZE];
+      bzero(page, SM_PAGESIZE);
+      for (int pageIndex = 0; pageIndex < (mapSize / SM_PAGESIZE); pageIndex++) {
+          int writeNum = (int)fwrite(page, 1, SM_PAGESIZE, mapfile);
+          assert(writeNum == SM_PAGESIZE);
+      }
   }
   
   off_t fileOffset = ftell(mapfile);
