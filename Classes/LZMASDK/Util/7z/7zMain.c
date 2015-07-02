@@ -654,11 +654,11 @@ int do7z_extract_entry(char *archivePath, char *archiveCachePath, char *entryNam
             Buf_Free(&buf, &g_Alloc);
           }
           
-          if (0) {
-            printf("Extracting ");
-            PrintString(temp);
-            printf("\n");
-          }          
+//          if (0) {
+//            printf("Extracting ");
+//            PrintString(temp);
+//            printf("\n");
+//          }          
           
           foundMatchingEntryName = 1;
           
