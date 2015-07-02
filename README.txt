@@ -5,6 +5,11 @@ improve performance. In addition, large file support was added so that iOS
 is able to decompress files as large as 650 megs using memory mapped IO.
 This code is based on lzma release 9.22 beta.
 
+Note that when incorporating the code into a new project, copy only the
+LZMASDK directory in the Classes subdir into your iOS project. All of the
+other files in this example iOS app exist just to illustrate how to use
+the SDK code in the LZMASDK directory.
+
 The code was modified as follows:
 
 Embedded version does not need exe branch predictors.

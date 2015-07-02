@@ -429,6 +429,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = lzmaSDK_Prefix.pch;
 				INFOPLIST_FILE = "lzmaSDK-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = lzmaSDK;
 			};
 			name = Debug;
@@ -441,6 +442,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = lzmaSDK_Prefix.pch;
 				INFOPLIST_FILE = "lzmaSDK-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = lzmaSDK;
 			};
 			name = Release;
