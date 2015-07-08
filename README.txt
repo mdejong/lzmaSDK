@@ -20,8 +20,19 @@ Bra86.c
 
 File List:
 
-7zBuf.c		7zCrc.c		7zFile.c	7zStream.c	Archive		LzHash.h	LzmaDec.h
-7zBuf.h		7zCrc.h		7zFile.h	7zVersion.h	CpuArch.h	LzmaDec.c	Types.h
+7zBuf.c
+7zCrc.c
+7zFile.c
+7zStream.c
+LzHash.h
+LzmaDec.h
+7zBuf.h
+7zCrc.h
+7zFile.h
+7zVersion.h
+CpuArch.h
+LzmaDec.c
+Types.h
 
 Removed:
 
@@ -34,7 +45,7 @@ Ppmd7Enc.c
 
 Sha256.*
 
-lzma Serch (encode) functions
+lzma Search (encode) functions
 
 rm LzFind*
 
@@ -57,12 +68,13 @@ define in 7z.h if you want to change the size at which memory mapped IO kicks in
 currently archives larger than 1 meg will use memory mapped IO.
 
 To update to a new version of the LZMA SDK, use the update.tcl to copy over those
-files that were used in this version.
+files that were used in this version. Note that updating is not trivial since files
+that have been modified would need to be merged.
 
 The example iOS application shows how to decode a small file and how some very large
 files can be decoded without using up all the memory in an iOS application. Previously,
 an archive with a dictionary around 30 to 40 megs would crash an iOS device, with
 the mmap logic files as large as 650 megs can be decoded without going over the
-virtual memory limits on iOS.
-
-
+virtual memory limits on iOS. Note that this large file support depends on how large
+a memory space a single process can map under iOS, so keeping a very large single
+archive under 400 megs is likely to be a good idea.
