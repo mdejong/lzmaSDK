@@ -13,6 +13,32 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		3CD338101B4F2D0C003A9F85 /* lzmaSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 3CD3380F1B4F2D0C003A9F85 /* lzmaSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3CD338161B4F2D0C003A9F85 /* lzmaSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CD3380B1B4F2D0C003A9F85 /* lzmaSDK.framework */; };
+		3CD3381D1B4F2D0C003A9F85 /* LZMAExtractorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CD3381C1B4F2D0C003A9F85 /* LZMAExtractorTests.m */; };
+		3CD338241B4F2DE1003A9F85 /* LZMAExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = CD33A5E911EBD12800A4B114 /* LZMAExtractor.m */; };
+		3CD338251B4F2DE1003A9F85 /* 7zAlloc.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875B1011EBC037004A1640 /* 7zAlloc.c */; };
+		3CD338261B4F2DE1003A9F85 /* 7zMain.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875B1211EBC037004A1640 /* 7zMain.c */; };
+		3CD338271B4F2DE1003A9F85 /* CpuArch.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875AA211EBBAC7004A1640 /* CpuArch.c */; };
+		3CD338281B4F2DE1003A9F85 /* Ppmd7.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A2011EBB689004A1640 /* Ppmd7.c */; };
+		3CD338291B4F2DE1003A9F85 /* Ppmd7Dec.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A2211EBB689004A1640 /* Ppmd7Dec.c */; };
+		3CD3382A1B4F2DE1003A9F85 /* Ppmd8.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A2311EBB689004A1640 /* Ppmd8.c */; };
+		3CD3382B1B4F2DE1003A9F85 /* Ppmd8Dec.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A2511EBB689004A1640 /* Ppmd8Dec.c */; };
+		3CD3382C1B4F2DE1003A9F85 /* 7zIn.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759F611EBB67C004A1640 /* 7zIn.c */; };
+		3CD3382D1B4F2DE1003A9F85 /* 7zBuf.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759ED11EBB67C004A1640 /* 7zBuf.c */; };
+		3CD3382E1B4F2DE1003A9F85 /* 7zBuf2.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759EF11EBB67C004A1640 /* 7zBuf2.c */; };
+		3CD3382F1B4F2DE1003A9F85 /* 7zDec.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759F311EBB67C004A1640 /* 7zDec.c */; };
+		3CD338301B4F2DE1003A9F85 /* 7zFile.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759F411EBB67C004A1640 /* 7zFile.c */; };
+		3CD338311B4F2DE1003A9F85 /* 7zStream.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759F711EBB67C004A1640 /* 7zStream.c */; };
+		3CD338321B4F2DE1003A9F85 /* Alloc.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759F911EBB67C004A1640 /* Alloc.c */; };
+		3CD338331B4F2DE1003A9F85 /* Delta.c in Sources */ = {isa = PBXBuildFile; fileRef = CD8759FD11EBB67C004A1640 /* Delta.c */; };
+		3CD338341B4F2DE1003A9F85 /* Lzma2Dec.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A0011EBB67C004A1640 /* Lzma2Dec.c */; };
+		3CD338351B4F2DE1003A9F85 /* LzmaDec.c in Sources */ = {isa = PBXBuildFile; fileRef = CD875A0711EBB67C004A1640 /* LzmaDec.c */; };
+		3CD338361B4F2E00003A9F85 /* LZMAExtractor.h in Headers */ = {isa = PBXBuildFile; fileRef = CD33A5E811EBD12800A4B114 /* LZMAExtractor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3CD338371B4F2ED6003A9F85 /* test.7z in Resources */ = {isa = PBXBuildFile; fileRef = CD33A57F11EBCF6300A4B114 /* test.7z */; };
+		3CD338381B4F2ED6003A9F85 /* halfgig.7z in Resources */ = {isa = PBXBuildFile; fileRef = CD968D3316AE04200003BCBB /* halfgig.7z */; };
+		3CD338391B4F2ED6003A9F85 /* sixfiftymeg_2blocks.7z in Resources */ = {isa = PBXBuildFile; fileRef = CDCCBE4816AE0EA70007BB70 /* sixfiftymeg_2blocks.7z */; };
+		3CD3383A1B4F2F6F003A9F85 /* onegig.7z in Resources */ = {isa = PBXBuildFile; fileRef = CD4488B116ADF6100022E1AA /* onegig.7z */; };
 		CD33A58011EBCF6300A4B114 /* test.7z in Resources */ = {isa = PBXBuildFile; fileRef = CD33A57F11EBCF6300A4B114 /* test.7z */; };
 		CD33A5EA11EBD12800A4B114 /* LZMAExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = CD33A5E911EBD12800A4B114 /* LZMAExtractor.m */; };
 		CD4488B216ADF6100022E1AA /* onegig.7z in Resources */ = {isa = PBXBuildFile; fileRef = CD4488B116ADF6100022E1AA /* onegig.7z */; };
@@ -37,6 +63,16 @@
 		CDCCBE4916AE0EA70007BB70 /* sixfiftymeg_2blocks.7z in Resources */ = {isa = PBXBuildFile; fileRef = CDCCBE4816AE0EA70007BB70 /* sixfiftymeg_2blocks.7z */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3CD338171B4F2D0C003A9F85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3CD3380A1B4F2D0C003A9F85;
+			remoteInfo = lzmaSDK;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* lzmaSDKAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzmaSDKAppDelegate.h; sourceTree = "<group>"; };
@@ -47,6 +83,12 @@
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* lzmaApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lzmaApp_Prefix.pch; sourceTree = "<group>"; };
+		3CD3380B1B4F2D0C003A9F85 /* lzmaSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = lzmaSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CD3380E1B4F2D0C003A9F85 /* lzmaSDK-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "lzmaSDK-Info.plist"; sourceTree = "<group>"; };
+		3CD3380F1B4F2D0C003A9F85 /* lzmaSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lzmaSDK.h; sourceTree = "<group>"; };
+		3CD338151B4F2D0C003A9F85 /* lzmaSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lzmaSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CD3381B1B4F2D0C003A9F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3CD3381C1B4F2D0C003A9F85 /* LZMAExtractorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LZMAExtractorTests.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* lzmaApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "lzmaApp-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		CD33A57F11EBCF6300A4B114 /* test.7z */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.7z; sourceTree = "<group>"; };
 		CD33A5E811EBD12800A4B114 /* LZMAExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZMAExtractor.h; sourceTree = "<group>"; };
@@ -100,6 +142,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3CD338071B4F2D0C003A9F85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CD338121B4F2D0C003A9F85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CD338161B4F2D0C003A9F85 /* lzmaSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -117,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				1D6058910D05DD3D006BFB54 /* lzmaApp.app */,
+				3CD3380B1B4F2D0C003A9F85 /* lzmaSDK.framework */,
+				3CD338151B4F2D0C003A9F85 /* lzmaSDKTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -127,6 +186,8 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				3CD3380C1B4F2D0C003A9F85 /* lzmaSDK */,
+				3CD338191B4F2D0C003A9F85 /* lzmaSDKTests */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -163,6 +224,40 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3CD3380C1B4F2D0C003A9F85 /* lzmaSDK */ = {
+			isa = PBXGroup;
+			children = (
+				3CD3380F1B4F2D0C003A9F85 /* lzmaSDK.h */,
+				3CD3380D1B4F2D0C003A9F85 /* Supporting Files */,
+			);
+			path = lzmaSDK;
+			sourceTree = "<group>";
+		};
+		3CD3380D1B4F2D0C003A9F85 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3CD3380E1B4F2D0C003A9F85 /* lzmaSDK-Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3CD338191B4F2D0C003A9F85 /* lzmaSDKTests */ = {
+			isa = PBXGroup;
+			children = (
+				3CD3381C1B4F2D0C003A9F85 /* LZMAExtractorTests.m */,
+				3CD3381A1B4F2D0C003A9F85 /* Supporting Files */,
+			);
+			path = lzmaSDKTests;
+			sourceTree = "<group>";
+		};
+		3CD3381A1B4F2D0C003A9F85 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3CD3381B1B4F2D0C003A9F85 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		CD875B0E11EBC037004A1640 /* Util */ = {
@@ -225,6 +320,18 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		3CD338081B4F2D0C003A9F85 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CD338101B4F2D0C003A9F85 /* lzmaSDK.h in Headers */,
+				3CD338361B4F2E00003A9F85 /* LZMAExtractor.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		1D6058900D05DD3D006BFB54 /* lzmaApp */ = {
 			isa = PBXNativeTarget;
@@ -243,6 +350,42 @@
 			productReference = 1D6058910D05DD3D006BFB54 /* lzmaApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		3CD3380A1B4F2D0C003A9F85 /* lzmaSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CD338221B4F2D0C003A9F85 /* Build configuration list for PBXNativeTarget "lzmaSDK" */;
+			buildPhases = (
+				3CD338061B4F2D0C003A9F85 /* Sources */,
+				3CD338071B4F2D0C003A9F85 /* Frameworks */,
+				3CD338081B4F2D0C003A9F85 /* Headers */,
+				3CD338091B4F2D0C003A9F85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = lzmaSDK;
+			productName = lzmaSDK;
+			productReference = 3CD3380B1B4F2D0C003A9F85 /* lzmaSDK.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3CD338141B4F2D0C003A9F85 /* lzmaSDKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3CD338231B4F2D0C003A9F85 /* Build configuration list for PBXNativeTarget "lzmaSDKTests" */;
+			buildPhases = (
+				3CD338111B4F2D0C003A9F85 /* Sources */,
+				3CD338121B4F2D0C003A9F85 /* Frameworks */,
+				3CD338131B4F2D0C003A9F85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3CD338181B4F2D0C003A9F85 /* PBXTargetDependency */,
+			);
+			name = lzmaSDKTests;
+			productName = lzmaSDKTests;
+			productReference = 3CD338151B4F2D0C003A9F85 /* lzmaSDKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -250,6 +393,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0450;
+				TargetAttributes = {
+					3CD3380A1B4F2D0C003A9F85 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					3CD338141B4F2D0C003A9F85 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "lzmaSDK" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -266,6 +417,8 @@
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* lzmaApp */,
+				3CD3380A1B4F2D0C003A9F85 /* lzmaSDK */,
+				3CD338141B4F2D0C003A9F85 /* lzmaSDKTests */,
 			);
 		};
 /* End PBXProject section */
@@ -280,6 +433,24 @@
 				CD4488B216ADF6100022E1AA /* onegig.7z in Resources */,
 				CD968D3416AE04200003BCBB /* halfgig.7z in Resources */,
 				CDCCBE4916AE0EA70007BB70 /* sixfiftymeg_2blocks.7z in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CD338091B4F2D0C003A9F85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CD338131B4F2D0C003A9F85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CD3383A1B4F2F6F003A9F85 /* onegig.7z in Resources */,
+				3CD338371B4F2ED6003A9F85 /* test.7z in Resources */,
+				3CD338381B4F2ED6003A9F85 /* halfgig.7z in Resources */,
+				3CD338391B4F2ED6003A9F85 /* sixfiftymeg_2blocks.7z in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,7 +484,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3CD338061B4F2D0C003A9F85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CD338241B4F2DE1003A9F85 /* LZMAExtractor.m in Sources */,
+				3CD338251B4F2DE1003A9F85 /* 7zAlloc.c in Sources */,
+				3CD338261B4F2DE1003A9F85 /* 7zMain.c in Sources */,
+				3CD338271B4F2DE1003A9F85 /* CpuArch.c in Sources */,
+				3CD338281B4F2DE1003A9F85 /* Ppmd7.c in Sources */,
+				3CD338291B4F2DE1003A9F85 /* Ppmd7Dec.c in Sources */,
+				3CD3382A1B4F2DE1003A9F85 /* Ppmd8.c in Sources */,
+				3CD3382B1B4F2DE1003A9F85 /* Ppmd8Dec.c in Sources */,
+				3CD3382C1B4F2DE1003A9F85 /* 7zIn.c in Sources */,
+				3CD3382D1B4F2DE1003A9F85 /* 7zBuf.c in Sources */,
+				3CD3382E1B4F2DE1003A9F85 /* 7zBuf2.c in Sources */,
+				3CD3382F1B4F2DE1003A9F85 /* 7zDec.c in Sources */,
+				3CD338301B4F2DE1003A9F85 /* 7zFile.c in Sources */,
+				3CD338311B4F2DE1003A9F85 /* 7zStream.c in Sources */,
+				3CD338321B4F2DE1003A9F85 /* Alloc.c in Sources */,
+				3CD338331B4F2DE1003A9F85 /* Delta.c in Sources */,
+				3CD338341B4F2DE1003A9F85 /* Lzma2Dec.c in Sources */,
+				3CD338351B4F2DE1003A9F85 /* LzmaDec.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3CD338111B4F2D0C003A9F85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3CD3381D1B4F2D0C003A9F85 /* LZMAExtractorTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3CD338181B4F2D0C003A9F85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3CD3380A1B4F2D0C003A9F85 /* lzmaSDK */;
+			targetProxy = 3CD338171B4F2D0C003A9F85 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
@@ -341,6 +553,194 @@
 				INFOPLIST_FILE = "$(SRCROOT)/lzmaApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = lzmaApp;
+			};
+			name = Release;
+		};
+		3CD3381E1B4F2D0C003A9F85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/lzmaSDK/lzmaSDK-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3CD3381F1B4F2D0C003A9F85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/lzmaSDK/lzmaSDK-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3CD338201B4F2D0C003A9F85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = lzmaSDKTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3CD338211B4F2D0C003A9F85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = lzmaSDKTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -381,6 +781,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		3CD338221B4F2D0C003A9F85 /* Build configuration list for PBXNativeTarget "lzmaSDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CD3381E1B4F2D0C003A9F85 /* Debug */,
+				3CD3381F1B4F2D0C003A9F85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3CD338231B4F2D0C003A9F85 /* Build configuration list for PBXNativeTarget "lzmaSDKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3CD338201B4F2D0C003A9F85 /* Debug */,
+				3CD338211B4F2D0C003A9F85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "lzmaSDK" */ = {
 			isa = XCConfigurationList;
