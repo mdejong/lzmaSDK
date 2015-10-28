@@ -296,6 +296,9 @@ uint32_t filesize(char *filepath) {
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   // Override point for customization after application launch
+  UIViewController *viewController = [[UIViewController alloc] init];
+  [viewController autorelease];
+  window.rootViewController = viewController;
   [window makeKeyAndVisible];
   
   NSTimer *timer = [NSTimer timerWithTimeInterval:1.0
