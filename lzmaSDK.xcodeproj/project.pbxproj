@@ -39,6 +39,8 @@
 		3CD338381B4F2ED6003A9F85 /* halfgig.7z in Resources */ = {isa = PBXBuildFile; fileRef = CD968D3316AE04200003BCBB /* halfgig.7z */; };
 		3CD338391B4F2ED6003A9F85 /* sixfiftymeg_2blocks.7z in Resources */ = {isa = PBXBuildFile; fileRef = CDCCBE4816AE0EA70007BB70 /* sixfiftymeg_2blocks.7z */; };
 		3CD3383A1B4F2F6F003A9F85 /* onegig.7z in Resources */ = {isa = PBXBuildFile; fileRef = CD4488B116ADF6100022E1AA /* onegig.7z */; };
+		3CD768D61C253A4B00660FB1 /* files_dirs.7z in Resources */ = {isa = PBXBuildFile; fileRef = 3CD768D51C253A4B00660FB1 /* files_dirs.7z */; };
+		3CD768D71C253A4B00660FB1 /* files_dirs.7z in Resources */ = {isa = PBXBuildFile; fileRef = 3CD768D51C253A4B00660FB1 /* files_dirs.7z */; };
 		CD33A58011EBCF6300A4B114 /* test.7z in Resources */ = {isa = PBXBuildFile; fileRef = CD33A57F11EBCF6300A4B114 /* test.7z */; };
 		CD33A5EA11EBD12800A4B114 /* LZMAExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = CD33A5E911EBD12800A4B114 /* LZMAExtractor.m */; };
 		CD4488B216ADF6100022E1AA /* onegig.7z in Resources */ = {isa = PBXBuildFile; fileRef = CD4488B116ADF6100022E1AA /* onegig.7z */; };
@@ -89,6 +91,7 @@
 		3CD338151B4F2D0C003A9F85 /* lzmaSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lzmaSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CD3381B1B4F2D0C003A9F85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CD3381C1B4F2D0C003A9F85 /* LZMAExtractorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LZMAExtractorTests.m; sourceTree = "<group>"; };
+		3CD768D51C253A4B00660FB1 /* files_dirs.7z */ = {isa = PBXFileReference; lastKnownFileType = file; path = files_dirs.7z; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* lzmaApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "lzmaApp-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		CD33A57F11EBCF6300A4B114 /* test.7z */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.7z; sourceTree = "<group>"; };
 		CD33A5E811EBD12800A4B114 /* LZMAExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZMAExtractor.h; sourceTree = "<group>"; };
@@ -207,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				CD33A57F11EBCF6300A4B114 /* test.7z */,
+				3CD768D51C253A4B00660FB1 /* files_dirs.7z */,
 				CD968D3316AE04200003BCBB /* halfgig.7z */,
 				CD4488B116ADF6100022E1AA /* onegig.7z */,
 				CDCCBE4816AE0EA70007BB70 /* sixfiftymeg_2blocks.7z */,
@@ -430,6 +434,7 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				CD33A58011EBCF6300A4B114 /* test.7z in Resources */,
+				3CD768D61C253A4B00660FB1 /* files_dirs.7z in Resources */,
 				CD4488B216ADF6100022E1AA /* onegig.7z in Resources */,
 				CD968D3416AE04200003BCBB /* halfgig.7z in Resources */,
 				CDCCBE4916AE0EA70007BB70 /* sixfiftymeg_2blocks.7z in Resources */,
@@ -448,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CD3383A1B4F2F6F003A9F85 /* onegig.7z in Resources */,
+				3CD768D71C253A4B00660FB1 /* files_dirs.7z in Resources */,
 				3CD338371B4F2ED6003A9F85 /* test.7z in Resources */,
 				3CD338381B4F2ED6003A9F85 /* halfgig.7z in Resources */,
 				3CD338391B4F2ED6003A9F85 /* sixfiftymeg_2blocks.7z in Resources */,

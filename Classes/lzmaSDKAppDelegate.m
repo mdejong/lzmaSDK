@@ -28,7 +28,7 @@ uint32_t filesize(char *filepath) {
   FILE *fp = fopen(filepath, "r");
   retcode = fseek(fp, 0, SEEK_END);
   assert(retcode == 0);
-  uint32_t size = ftell(fp);
+  uint32_t size = (uint32_t) ftell(fp);
   fclose(fp);
   return size;
 }
@@ -90,6 +90,61 @@ uint32_t filesize(char *filepath) {
   }
   
   NSLog(@"DONE testSmallInMem");
+}
+
+// This test decodes a small text file from the attached resource test.7z
+// This is a basic sanity check of the logic to decode an entry to a .7z archive.
+// Because the input archive and output files are small, this test case will
+// not use up much memory or emit large files. Note that because this dictionary
+// size is smaller than the 1 meg k7zUnpackMapDictionaryInMemoryMaxNumBytes limit,
+// this unpack operaiton will be done entirely in memory as opposed to using
+// mapped memory that is paged to disk.
+
+- (void) testFilesAndDirs
+{
+  NSLog(@"START testFilesAndDirs");
+  
+  BOOL worked;
+  
+  // Extract dirs files
+  
+  NSString *archiveFilename = @"files_dirs.7z";
+  NSString *archiveResPath = [[NSBundle mainBundle] pathForResource:archiveFilename ofType:nil];
+  NSAssert(archiveResPath, @"can't find %@", archiveFilename);
+  
+  NSArray *contents = [LZMAExtractor extract7zArchive:archiveResPath
+                                              dirName:NSTemporaryDirectory()
+                                           preserveDir:TRUE];
+  
+  for (NSString *entryPath in contents) {
+    NSData *outputData = [NSData dataWithContentsOfFile:entryPath];
+    NSString *outStr = [[NSString alloc] initWithData:outputData encoding:NSUTF8StringEncoding];
+    [outStr autorelease];
+    
+    NSLog(@"%@", entryPath);
+    NSLog(@"%@", outStr);
+  }
+  
+  // Extract single entry "d2/f_2_1" and save it as "d2_f_2_1" in the tmp dir.
+  
+  NSString *entryFilename = @"d2/f_2_1";
+  NSString *makeTmpFilename = @"d2_f_2_1";
+  NSString *makeTmpPath = [NSTemporaryDirectory() stringByAppendingPathComponent:makeTmpFilename];
+  
+  worked = [LZMAExtractor extractArchiveEntry:archiveResPath
+                                 archiveEntry:entryFilename
+                                      outPath:makeTmpPath];
+  
+  if (worked) {
+    NSData *outputData = [NSData dataWithContentsOfFile:makeTmpPath];
+    NSString *outStr = [[NSString alloc] initWithData:outputData encoding:NSUTF8StringEncoding];
+    [outStr autorelease];
+    
+    NSLog(@"%@", makeTmpFilename);
+    NSLog(@"%@", outStr);
+  }
+  
+  NSLog(@"DONE testFilesAndDirs");
 }
 
 // This test will extract a 500 meg file from a solid archive, this 500 meg file is way too large
@@ -322,6 +377,8 @@ uint32_t filesize(char *filepath) {
   NSLog(@"START");
   
   [self testSmallInMem];
+  
+  [self testFilesAndDirs];
   
   [self testHalfGig];
 

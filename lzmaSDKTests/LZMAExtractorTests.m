@@ -22,7 +22,7 @@ static uint32_t filesize(char *filepath) {
   FILE *fp = fopen(filepath, "r");
   retcode = fseek(fp, 0, SEEK_END);
   assert(retcode == 0);
-  uint32_t size = ftell(fp);
+  uint32_t size = (uint32_t) ftell(fp);
   fclose(fp);
   return size;
 }
@@ -73,6 +73,81 @@ static uint32_t filesize(char *filepath) {
   }
   
   NSLog(@"DONE testSmallInMem");
+}
+
+// This test decodes a small text file from the attached resource test.7z
+// This is a basic sanity check of the logic to decode an entry to a .7z archive.
+// Because the input archive and output files are small, this test case will
+// not use up much memory or emit large files. Note that because this dictionary
+// size is smaller than the 1 meg k7zUnpackMapDictionaryInMemoryMaxNumBytes limit,
+// this unpack operaiton will be done entirely in memory as opposed to using
+// mapped memory that is paged to disk.
+
+- (void) testFilesAndDirs
+{
+  NSLog(@"START testFilesAndDirs");
+  
+  BOOL worked;
+  
+  // Extract dirs files
+  
+  NSString *archiveFilename = @"files_dirs.7z";
+  NSString *archiveResPath = [[NSBundle bundleForClass:LZMAExtractorTests.class] pathForResource:archiveFilename ofType:nil];
+  NSAssert(archiveResPath, @"can't find %@", archiveFilename);
+  
+  NSArray *contents = [LZMAExtractor extract7zArchive:archiveResPath
+                                              dirName:NSTemporaryDirectory()
+                                          preserveDir:TRUE];
+  
+  if ((0)) {
+  for (NSString *entryPath in contents) {
+    NSData *outputData = [NSData dataWithContentsOfFile:entryPath];
+    NSString *outStr = [[NSString alloc] initWithData:outputData encoding:NSUTF8StringEncoding];
+    
+    NSLog(@"%@", entryPath);
+    NSLog(@"%@", outStr);
+  }
+  }
+  
+  XCTAssert(contents.count == 4);
+  
+  NSString *content;
+  
+  // .../d1/f1
+  content = contents[0];
+  XCTAssert([content hasSuffix:@"d1/f1"]);
+  
+  // .../d1/f2
+  content = contents[1];
+  XCTAssert([content hasSuffix:@"d1/f2"]);
+  
+  // .../d2/f_2_1
+  content = contents[2];
+  XCTAssert([content hasSuffix:@"d2/f_2_1"]);
+
+  // .../d2/f_2_2
+  content = contents[3];
+  XCTAssert([content hasSuffix:@"d2/f_2_2"]);
+  
+  // Extract single entry "d2/f_2_1" and save it as "d2_f_2_1" in the tmp dir.
+  
+  NSString *entryFilename = @"d2/f_2_1";
+  NSString *makeTmpFilename = @"d2_f_2_1";
+  NSString *makeTmpPath = [NSTemporaryDirectory() stringByAppendingPathComponent:makeTmpFilename];
+  
+  worked = [LZMAExtractor extractArchiveEntry:archiveResPath
+                                 archiveEntry:entryFilename
+                                      outPath:makeTmpPath];
+  
+  XCTAssert(worked);
+  
+  if (worked) {
+    NSData *outputData = [NSData dataWithContentsOfFile:makeTmpPath];
+    NSString *outStr = [[NSString alloc] initWithData:outputData encoding:NSUTF8StringEncoding];
+    XCTAssert([outStr hasSuffix:@"12\n"]);
+  }
+  
+  NSLog(@"DONE testFilesAndDirs");
 }
 
 // This test will extract a 500 meg file from a solid archive, this 500 meg file is way too large
