@@ -78,3 +78,6 @@ the mmap logic files as large as 650 megs can be decoded without going over the
 virtual memory limits on iOS. Note that this large file support depends on how large
 a memory space a single process can map under iOS, so keeping a very large single
 archive under 400 megs is likely to be a good idea.
+
+See LICENSE.txt for license details.
+
